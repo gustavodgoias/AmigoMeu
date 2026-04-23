@@ -1,0 +1,147 @@
+/* ═══════════════════════════════════════════
+   DESIGN TOKENS — Amitys-inspired System
+   Source: amityspet_data.json / amityspet.com
+   ═══════════════════════════════════════════ */
+
+:root {
+  /* ── Amitys Color Palette ── */
+  --color-amitys-green: #63B22F;
+  --color-amitys-green-dark: #4a8a22;
+  --color-amitys-green-light: #8ed456;
+  --color-amitys-green-muted: rgba(99,178,47,0.08);
+  --color-amitys-green-border: rgba(99,178,47,0.2);
+
+  --color-amitys-blue: #6EC1E4;
+  --color-amitys-blue-dark: #4ea8cf;
+  --color-amitys-blue-light: #a0d8f0;
+
+  --color-amitys-secondary: #61CE70;
+
+  /* ── Surface & Background ── */
+  --surface-white: #FFFFFF;
+  --surface-alt: #f7faf5;
+  --surface-dark: #111118;
+  --surface-muted: #f2f2f2;
+
+  /* ── Text ── */
+  --text-dark: #1a1a1a;
+  --text-muted: #666666;
+  --text-light: #999999;
+  --text-white: #FFFFFF;
+
+  /* ── Borders ── */
+  --border-light: #e8e8e8;
+  --border-muted: #f2f2f2;
+
+  /* ── Glassmorphism (refined) ── */
+  --glass-blur: blur(12px);
+  --glass-blur-heavy: blur(24px);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-bg-dark: rgba(17, 17, 24, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-shadow: 0 8px 32px rgba(0,0,0,0.06);
+
+  /* ── Spatial Shadows ── */
+  --shadow-spatial-sm:  0 2px 10px rgba(0,0,0,0.06);
+  --shadow-spatial-md:  0 6px 24px rgba(0,0,0,0.10);
+  --shadow-spatial-lg:  0 16px 48px rgba(0,0,0,0.14);
+  --shadow-green:       0 4px 20px rgba(99,178,47,0.25);
+  --shadow-blue:        0 4px 20px rgba(110,193,228,0.25);
+  --shadow-spatial-inner: inset 0 2px 4px rgba(0,0,0,0.04);
+
+  /* ── Gradients ── */
+  --gradient-green: linear-gradient(135deg, #63B22F 0%, #8ed456 100%);
+  --gradient-blue:  linear-gradient(135deg, #6EC1E4 0%, #a0d8f0 100%);
+  --gradient-dark:  linear-gradient(180deg, #1a1a1a 0%, #111118 100%);
+  --gradient-surface: linear-gradient(180deg, #ffffff 0%, #f7faf5 100%);
+  --gradient-hero: linear-gradient(160deg, #f7faf5 0%, #ffffff 60%, #e8f5e0 100%);
+
+  /* ── Typography ── */
+  --font-sans: "Inter", Roboto, "Segoe UI", Arial, sans-serif;
+  --font-display: "Bebas Neue", Roboto, sans-serif;
+
+  /* ── Layout ── */
+  --header-height: 72px;
+  --header-height-scrolled: 56px;
+  --section-pad: clamp(4rem, 9vw, 8rem);
+  --container-max: 1200px;
+  --container-pad: clamp(1.2rem, 4vw, 3rem);
+
+  /* ── Border Radius (Amitys: mostly sharp, some soft) ── */
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 28px;
+  --radius-pill: 9999px;
+  --radius-card: 0px;      /* Amitys uses sharp cards */
+  --radius-section: 60px;  /* Top-rounded footer sections */
+}
+
+/* ══════════════════════════════════════════════════
+   AMITYS-STYLE UTILITY CLASSES
+   ══════════════════════════════════════════════════ */
+
+/* Glass Panel */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-panel-dark {
+  background: var(--glass-bg-dark);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.37);
+}
+
+/* Green accent kicker pill */
+.kicker-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 5px 14px;
+  background: var(--color-amitys-green-muted);
+  border: 1px solid var(--color-amitys-green-border);
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-amitys-green-dark);
+}
+
+/* ── Float animation ── */
+.antigravity-float {
+  animation: float-cycle 6s ease-in-out infinite;
+}
+
+@keyframes float-cycle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33%       { transform: translateY(-12px) rotate(1deg); }
+  66%       { transform: translateY(-6px) rotate(-0.5deg); }
+}
+
+/* ── Isometric ── */
+.isometric-view {
+  transform: perspective(1000px) rotateX(12deg) rotateY(-8deg);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.isometric-view:hover {
+  transform: perspective(1000px) rotateX(18deg) rotateY(-4deg) translateY(-8px);
+}
+
+/* ── Scroll reveal helpers ── */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
