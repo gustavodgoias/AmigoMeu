@@ -418,28 +418,26 @@ export default function Areias() {
         className="relative lg:h-[93dvh] flex flex-col items-stretch overflow-hidden transition-colors duration-700"
         style={{ backgroundColor: current.accentColor }}
       >
-        <div className="hidden lg:block relative lg:absolute top-0 right-0 w-full lg:w-1/2 h-full z-0 order-1 lg:order-2">
+        <div className="absolute inset-0 lg:left-auto lg:top-0 lg:right-0 w-full lg:w-1/2 h-full z-0 order-1 lg:order-2">
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-full object-cover object-center opacity-70"
+            className="w-full h-full object-cover object-center opacity-30 lg:opacity-70"
           >
             <source src="/videos/gato02.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent hidden lg:block" />
+          <div className="absolute inset-0 bg-black/40 lg:bg-gradient-to-r lg:from-black/20 lg:to-transparent" />
           {areiasProducts.map((p, i) => (
             <div 
               key={p.id}
-              className={`absolute inset-0 hidden lg:block transition-opacity duration-700 ${i === activeProduct ? "opacity-100" : "opacity-0"}`}
+              className={`absolute inset-0 transition-opacity duration-700 ${i === activeProduct ? "opacity-100" : "opacity-0"}`}
               style={{ 
                 background: `linear-gradient(to right, ${p.accentColor} 0%, ${p.accentColor}1A 30%, transparent 100%)` 
               }} 
             />
           ))}
-
-
         </div>
 
         <div className="page-container relative z-10 w-full order-2 lg:order-1 flex items-center">

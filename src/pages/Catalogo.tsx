@@ -220,7 +220,7 @@ export default function Catalogo() {
             {allProducts.map((product, idx) => (
               <FadeInSection key={product.id} delay={idx * 50}>
                 <div className="group bg-white border-4 border-white shadow-xl overflow-hidden flex flex-col h-full hover:shadow-2xl transition-all duration-500 rounded-[1.5rem]">
-                  <div className="hidden lg:flex relative aspect-[4/5] items-center justify-center p-12 bg-[#f0f0f0] group-hover:bg-white transition-colors overflow-hidden">
+                  <div className="flex relative aspect-[4/5] items-center justify-center p-12 bg-[#f0f0f0] group-hover:bg-white transition-colors overflow-hidden">
                     <div
                       className="absolute top-0 left-0 w-full h-2"
                       style={{ backgroundColor: product.color }}
