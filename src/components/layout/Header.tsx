@@ -108,49 +108,50 @@ export default function Header() {
           </div>
         </div>
 
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.18 }}
-              className={`fixed inset-0 ${scrolled ? 'top-[54px]' : 'top-[62px]'} bg-white lg:hidden z-[100] overflow-y-auto`}
-            >
-              <motion.nav 
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="flex flex-col px-8 py-10 h-full"
-              >
-                {navItems.map((item) => (
-                  <NavLink
-                    key={item.href}
-                    to={item.href}
-                    className={({ isActive }) =>
-                      `py-4 text-[0.8rem] font-bold tracking-[0.14em] uppercase border-b border-[#f2f2f2] last:border-0 transition-colors ${
-                        isActive ? "text-primary-500" : "text-[#1a1a1a] hover:text-primary-500"
-                      }`
-                    }
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </NavLink>
-                ))}
-                <div className="mt-6">
-                  <Link
-                    to="/comprar"
-                    className="btn-primary w-full flex items-center justify-center gap-2 py-3.5"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <ShoppingCart className="h-4 w-4" />
-                    {t.nav.buy}
-                  </Link>
-                </div>
-              </motion.nav>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </header>
+
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18 }}
+            className={`fixed inset-0 ${scrolled ? 'top-[54px]' : 'top-[62px]'} bg-white lg:hidden z-[100] overflow-y-auto`}
+          >
+            <motion.nav 
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="flex flex-col px-8 py-10 h-full"
+            >
+              {navItems.map((item) => (
+                <NavLink
+                  key={item.href}
+                  to={item.href}
+                  className={({ isActive }) =>
+                    `py-4 text-[0.8rem] font-bold tracking-[0.14em] uppercase border-b border-[#f2f2f2] last:border-0 transition-colors ${
+                      isActive ? "text-primary-500" : "text-[#1a1a1a] hover:text-primary-500"
+                    }`
+                  }
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+              <div className="mt-6">
+                <Link
+                  to="/comprar"
+                  className="btn-primary w-full flex items-center justify-center gap-2 py-3.5"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <ShoppingCart className="h-4 w-4" />
+                  {t.nav.buy}
+                </Link>
+              </div>
+            </motion.nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <div className={scrolled ? "h-[54px] lg:h-[57px]" : "h-[62px] lg:h-[73px]"} style={{ transition: "height 0.3s" }} />
     </>

@@ -559,19 +559,19 @@ export default function Home() {
 
       {/* ══ HERO — Brand Blue Block ══ */}
       <section ref={heroRef} className="relative lg:h-[93dvh] flex flex-col items-stretch overflow-hidden bg-[#5bbced]">
-        {/* Full-bleed image panel (Right side) - Hidden on mobile */}
-        <div className="hidden lg:block relative lg:absolute top-0 right-0 w-full lg:w-1/2 h-full z-0 order-1 lg:order-2">
+        {/* Full-bleed image panel (Right side) */}
+        <div className="absolute inset-0 lg:left-auto lg:top-0 lg:right-0 w-full lg:w-1/2 h-full z-0 order-1 lg:order-2">
           <video
             autoPlay
             loop
             muted
             playsInline
             preload="auto"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center opacity-30 lg:opacity-100"
           >
             <source src="/videos/video_Site_2.mp4?v=1" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#5bbced] from-0% via-[#5bbced]/10 via-30% to-transparent hidden lg:block" />
+          <div className="absolute inset-0 bg-black/40 lg:bg-gradient-to-r lg:from-[#5bbced] lg:from-0% lg:via-[#5bbced]/10 lg:via-30% lg:to-transparent" />
         </div>
 
         <div className="page-container relative z-10 w-full order-2 lg:order-1 flex items-center">

@@ -292,16 +292,7 @@ export default function Toppers() {
           >
             <source src="/videos/video_Site.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-black/40 lg:bg-gradient-to-r lg:from-black/20 lg:to-transparent" />
-          {toppersProducts.map((p, i) => (
-            <div
-              key={p.id}
-              className={`absolute inset-0 transition-opacity duration-700 ${i === activeProduct ? "opacity-100" : "opacity-0"}`}
-              style={{
-                background: `linear-gradient(to right, ${p.accentColor} 0%, ${p.accentColor}1A 30%, transparent 100%)`
-              }}
-            />
-          ))}
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
         <div className="page-container relative z-10 w-full order-2 lg:order-1 flex items-center">
