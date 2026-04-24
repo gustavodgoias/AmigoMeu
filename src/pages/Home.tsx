@@ -682,7 +682,7 @@ export default function Home() {
 
       {/* ══ EDITORIAL — Lifestyle woman and dog ══ */}
       <EditorialSection
-        image="/images/hero-gatoecachrro.png"
+        image="/images/hero-gato-cachorro.png"
         imageAlt={copy.editorialOne.imageAlt}
         kicker={copy.editorialOne.kicker}
         title={copy.editorialOne.title}

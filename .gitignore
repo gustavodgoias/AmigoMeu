@@ -22,3 +22,14 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# AI / Tools
+.agents/
+SKILLS/
+skills-lock.json
+
+# Scratch / Reference (not part of the app)
+REFS/
+IMGS_PRODUTOS/
+scratch_*.md
+amityspet_data.json

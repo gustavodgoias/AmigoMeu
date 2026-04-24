@@ -390,7 +390,7 @@ export default function Sobre() {
           <article className="grid lg:grid-cols-2 bg-[#90C63E] text-white overflow-hidden min-h-[600px] items-center">
             <div className="hidden lg:block relative h-full order-1 lg:order-2">
               <img
-                src="/images/hero-gatoecachrro.png"
+                src="/images/hero-gato-cachorro.png"
                 alt={copy.missionImageAlt}
                 className="absolute inset-0 w-full h-full object-cover grayscale-[0.2]"
               />
