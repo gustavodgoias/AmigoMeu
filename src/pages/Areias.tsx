@@ -518,7 +518,7 @@ export default function Areias() {
                 <FadeInSection delay={80}>
                   <div className="grid lg:grid-cols-2 min-h-[500px]">
                     <div
-                      className={`hidden lg:flex relative items-center justify-center p-8 py-16 lg:p-32 ${
+                      className={`hidden lg:flex relative items-center justify-center p-8 py-16 lg:p-24 ${
                         idx % 2 !== 0 ? "lg:order-2" : "lg:order-1"
                       }`}
                       style={{ backgroundColor: product.bgTint }}
@@ -530,12 +530,12 @@ export default function Areias() {
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="max-h-[350px] w-auto object-contain group-hover:scale-105 transition-transform duration-700 drop-shadow-2xl"
+                        className="max-h-[400px] w-auto object-contain group-hover:scale-105 transition-transform duration-700 drop-shadow-2xl"
                       />
                     </div>
 
                     <div
-                      className={`p-8 py-16 lg:p-32 bg-white flex flex-col justify-center gap-6 ${
+                      className={`p-8 py-16 lg:p-24 bg-white flex flex-col justify-center gap-6 ${
                         idx % 2 !== 0 ? "lg:order-1" : "lg:order-2"
                       }`}
                     >
