@@ -15,6 +15,7 @@ type CatalogAsset = {
 
 type CatalogProduct = CatalogAsset & {
   name: string;
+  subtitle: string;
   categoryLabel: string;
 };
 
@@ -152,49 +153,74 @@ export default function Catalogo() {
     ...areiasAssets.map((asset, index) => ({
       ...asset,
       name: t.areias.products[index]?.name ?? asset.id,
+      subtitle: (t.areias.products[index] as any)?.subtitle ?? "",
       categoryLabel: copy.categoryAreias,
     })),
     ...toppersAssets.map((asset, index) => ({
       ...asset,
       name: t.toppers.products[index]?.name ?? asset.id,
+      subtitle: (t.toppers.products[index] as any)?.subtitle ?? "",
       categoryLabel: copy.categoryToppers,
     })),
   ];
 
   return (
-    <main className="overflow-hidden h-[100dvh]">
+    <main className="overflow-hidden min-h-screen">
       <Helmet>
         <title>{copy.pageTitle} | Amigo Meu</title>
         <meta name="description" content={copy.pageDescription} />
       </Helmet>
 
-      {/* Hero — Brand Blue Block */}
-      <section className="h-[100dvh] flex items-center bg-[#5bbced] text-white pt-20">
-        <div className="page-container text-left">
+      {/* Hero — Immersive Video Background */}
+      <section className="relative h-[80dvh] lg:h-[93dvh] flex items-center bg-[#5bbced] text-white pt-[73px] lg:pt-0 overflow-hidden">
+        {/* Background Video — very subtle texture */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute h-full w-full object-cover opacity-100"
+          >
+            <source src="/videos/catalogo.mp4" type="video/mp4" />
+          </video>
+          {/* Strong solid overlay */}
+          <div className="absolute inset-0 bg-[#5bbced]/90" />
+        </div>
+
+        <div className="page-container relative z-10 text-center flex flex-col items-center justify-center gap-0">
           <FadeInSection>
-            <span className="section-kicker !bg-white/20 !text-white !border-white/30 uppercase tracking-[0.2em]">
+            {/* Kicker */}
+            <span className="section-kicker !bg-white/10 !text-white/80 !border-white/20 uppercase tracking-[0.4em] text-[0.65rem] mx-auto">
               {copy.kicker}
             </span>
-            <h1 className="heading-xl !text-white mt-8 uppercase tracking-tight leading-[0.95]">
+
+            {/* Main heading */}
+            <h1 className="text-[4rem] lg:text-[7rem] font-black !text-white mt-10 uppercase tracking-tight leading-[0.85]">
               {copy.headingPrefix}{" "}
-              <span className="text-white/70 italic font-bold">
+              <span className="text-white/40 italic font-light">
                 {copy.headingHighlight}
               </span>
             </h1>
-            <p className="mt-8 text-white/80 font-light max-w-xl text-[1.25rem] leading-relaxed">
+
+            {/* Decorative divider */}
+            <div className="mt-12 mb-10 mx-auto w-24 h-[3px] bg-white/40 rounded-full" />
+
+            {/* Intro text */}
+            <p className="text-white/80 max-w-2xl mx-auto text-[1.3rem] leading-[1.8] tracking-wider font-light">
               {copy.intro}
             </p>
           </FadeInSection>
         </div>
       </section>
 
-      <section className="py-24 bg-[#fafafa]">
+      <section className="py-16 lg:py-32 bg-[#fafafa]">
         <div className="page-container">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {allProducts.map((product, idx) => (
               <FadeInSection key={product.id} delay={idx * 50}>
                 <div className="group bg-white border-4 border-white shadow-xl overflow-hidden flex flex-col h-full hover:shadow-2xl transition-all duration-500 rounded-[1.5rem]">
-                  <div className="relative aspect-[4/5] flex items-center justify-center p-12 bg-[#f0f0f0] group-hover:bg-white transition-colors overflow-hidden">
+                  <div className="hidden lg:flex relative aspect-[4/5] items-center justify-center p-12 bg-[#f0f0f0] group-hover:bg-white transition-colors overflow-hidden">
                     <div
                       className="absolute top-0 left-0 w-full h-2"
                       style={{ backgroundColor: product.color }}
@@ -204,7 +230,7 @@ export default function Catalogo() {
                       alt={product.name}
                       className="h-full w-auto object-contain group-hover:scale-105 transition-transform duration-700 z-10"
                     />
-                    <div 
+                    <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500"
                       style={{ backgroundColor: product.color }}
                     />
@@ -214,9 +240,16 @@ export default function Catalogo() {
                   </div>
 
                   <div className="p-10 flex flex-col flex-grow gap-6">
-                    <h3 className="text-2xl font-black text-[#1a1a1a] leading-none uppercase tracking-tight">
-                      {product.name}
-                    </h3>
+                    <div className="flex flex-col gap-2">
+                      <h3 className="text-2xl font-black text-[#1a1a1a] leading-none uppercase tracking-wider">
+                        {product.name}
+                      </h3>
+                      {product.subtitle && (
+                        <p className="text-base text-gray-600 font-medium leading-tight">
+                          {product.subtitle}
+                        </p>
+                      )}
+                    </div>
                     <div className="mt-auto pt-6 flex flex-col gap-4">
                       <Link
                         to={product.link}
@@ -242,7 +275,7 @@ export default function Catalogo() {
         </div>
       </section>
 
-      <section className="py-24 bg-[#111118] text-white">
+      <section className="py-16 lg:py-32 bg-[#111118] text-white">
         <div className="page-container text-center">
           <FadeInSection>
             <h2 className="heading-lg !text-white">

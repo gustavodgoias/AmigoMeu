@@ -2,8 +2,8 @@ const enUS = {
   // ─── Navigation ───────────────────────────────────────────────────
   nav: {
     home: "Home",
-    areias: "Cat Litter",
-    toppers: "Toppers",
+    areias: "Cat Line",
+    toppers: "Dog Line",
     b2b: "B2B Partners",
     buy: "Shop",
     language: "Language",
@@ -122,6 +122,7 @@ const enUS = {
       {
         id: "capim-limao",
         name: "Lemongrass",
+        subtitle: "Natural freshness and citrus control",
         description:
           "The power of cassava combined with the herbal touch of lemongrass. Excellent odor neutralization.",
         badges: [
@@ -134,6 +135,7 @@ const enUS = {
       {
         id: "lavanda",
         name: "Lavender",
+        subtitle: "Floral touch for a serene environment",
         description:
           "The relaxing scent of lavender to transform your feline's litter box into a calm environment.",
         badges: [
@@ -206,6 +208,7 @@ const enUS = {
       {
         id: "frango",
         name: "Chicken Flavor",
+        subtitle: "Real protein and irresistible crunch",
         description:
           "Cassava topper and real chicken proteins. An extra layer of irresistible flavor.",
         badges: [
@@ -218,6 +221,7 @@ const enUS = {
       {
         id: "carne",
         name: "Beef Flavor",
+        subtitle: "Pure energy with selected beef protein",
         description:
           "Developed with bovine protein and cassava, offering the right dose of energy.",
         badges: [
@@ -230,6 +234,7 @@ const enUS = {
       {
         id: "figado",
         name: "Liver Flavor",
+        subtitle: "Rich in iron and natural vitamins",
         description:
           "The irresistible essence of liver that will make your best friend love mealtime.",
         badges: [

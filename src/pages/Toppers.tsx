@@ -278,49 +278,37 @@ export default function Toppers() {
       </Helmet>
 
       {/* Dynamic Hero — Brand Color Block */}
-      <section 
-        className="relative h-[100dvh] flex items-center overflow-hidden pt-20 transition-colors duration-700"
+      <section
+        className="relative lg:h-[93dvh] flex flex-col items-stretch overflow-hidden transition-colors duration-700"
         style={{ backgroundColor: current.accentColor }}
       >
-        <div className="absolute top-0 right-0 w-full lg:w-1/2 h-[450px] lg:h-full z-0">
-          <motion.img
-            src="/images/hero-toppers.png"
-            alt={pageCopy.heroAlt}
-            className="w-full h-full object-cover object-center opacity-80"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.8 }}
-            transition={{ duration: 1.2 }}
-          />
+        <div className="hidden lg:block relative lg:absolute top-0 right-0 w-full lg:w-1/2 h-full z-0 order-1 lg:order-2">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover object-center opacity-70"
+          >
+            <source src="/videos/video_Site.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent hidden lg:block" />
           {toppersProducts.map((p, i) => (
-            <div 
+            <div
               key={p.id}
               className={`absolute inset-0 hidden lg:block transition-opacity duration-700 ${i === activeProduct ? "opacity-100" : "opacity-0"}`}
-              style={{ 
-                background: `linear-gradient(to right, ${p.accentColor} 0%, ${p.accentColor}1A 30%, transparent 100%)` 
-              }} 
+              style={{
+                background: `linear-gradient(to right, ${p.accentColor} 0%, ${p.accentColor}1A 30%, transparent 100%)`
+              }}
             />
           ))}
 
-          <div className="absolute bottom-12 left-12 lg:left-24 z-20">
-            <AnimatePresence mode="popLayout">
-              <motion.img
-                key={current.id}
-                src={current.image}
-                alt={current.name}
-                className="h-[180px] lg:h-[240px] w-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
-                initial={{ opacity: 0, scale: 0.8, y: 30 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.8, y: 30 }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              />
-            </AnimatePresence>
-          </div>
+
         </div>
 
-        <div className="page-container relative z-10 w-full">
+        <div className="page-container relative z-10 w-full order-2 lg:order-1 flex items-center">
           <div className="grid lg:grid-cols-2 items-center">
-            <div className="py-24 lg:py-32 lg:pr-16 p-8 lg:p-0">
+            <div className="py-8 lg:py-32 lg:pr-16">
               <FadeInSection delay={50}>
                 <motion.span
                   className="section-kicker !bg-white/10 !text-white !border-white/30 uppercase tracking-[0.2em]"
@@ -328,7 +316,7 @@ export default function Toppers() {
                   {t.nav.toppers}
                 </motion.span>
               </FadeInSection>
-<br />
+              <br />
               <FadeInSection delay={130} className="mt-8">
                 <h1 className="heading-xl leading-[0.95] !text-white uppercase tracking-tight">
                   {t.toppers.title}
@@ -338,7 +326,7 @@ export default function Toppers() {
                   </span>
                 </h1>
               </FadeInSection>
-<br />
+              <br />
               <FadeInSection delay={210} className="mt-8">
                 <p className="text-[1.25rem] leading-relaxed text-white/90 max-w-md font-light">
                   {t.toppers.pageSubtitle}
@@ -385,13 +373,13 @@ export default function Toppers() {
               </FadeInSection>
             </div>
 
-            <div className="h-[450px] lg:h-0" />
+
           </div>
         </div>
       </section>
 
       {/* Product details with 4+ topics per flavor */}
-      <section className="py-24 border-t border-[#e8e8e8] bg-white">
+      <section className="py-12 lg:py-24 border-t border-[#e8e8e8] bg-white">
         <div className="page-container mb-24">
           <FadeInSection className="text-center">
             <span className="section-kicker">{pageCopy.availableFlavors}</span>
@@ -410,9 +398,8 @@ export default function Toppers() {
                   <FadeInSection delay={80}>
                     <div className="grid lg:grid-cols-2 min-h-[500px]">
                       <div
-                        className={`relative flex items-center justify-center p-12 lg:p-20 ${
-                          idx % 2 !== 0 ? "lg:order-2" : "lg:order-1"
-                        }`}
+                        className={`hidden lg:flex relative items-center justify-center p-8 py-16 lg:p-32 ${idx % 2 !== 0 ? "lg:order-2" : "lg:order-1"
+                          }`}
                         style={{ backgroundColor: product.bgTint }}
                       >
                         <div
@@ -427,9 +414,8 @@ export default function Toppers() {
                       </div>
 
                       <div
-                        className={`p-10 lg:p-20 bg-white flex flex-col justify-center gap-6 ${
-                          idx % 2 !== 0 ? "lg:order-1" : "lg:order-2"
-                        }`}
+                        className={`p-8 py-16 lg:p-32 bg-white flex flex-col justify-center gap-6 ${idx % 2 !== 0 ? "lg:order-1" : "lg:order-2"
+                          }`}
                       >
                         <div
                           className="text-[0.75rem] font-bold tracking-[0.25em] uppercase"

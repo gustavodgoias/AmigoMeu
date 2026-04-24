@@ -10,6 +10,39 @@ import { useI18n } from "../i18n";
 import type { Locale } from "../i18n";
 
 gsap.registerPlugin(ScrollTrigger);
+import { useInView, useAnimate } from "framer-motion";
+
+function CountUp({ value, duration = 2 }: { value: string; duration?: number }) {
+  const [scope, animate] = useAnimate();
+  const isInView = useInView(scope, { once: true });
+  const numericPart = value.match(/\d+/);
+  const suffix = value.replace(/\d+/, "");
+
+  useEffect(() => {
+    if (isInView) {
+      // Always animate opacity first
+      animate(scope.current, { opacity: 1, y: [10, 0] }, { duration: 0.8 });
+
+      if (numericPart) {
+        animate(0, parseInt(numericPart[0]), {
+          duration,
+          ease: [0.16, 1, 0.3, 1], // Custom easeOutExpos
+          onUpdate: (latest) => {
+            if (scope.current) {
+              scope.current.textContent = Math.floor(latest) + suffix;
+            }
+          },
+        });
+      }
+    }
+  }, [isInView, animate, numericPart, suffix, scope, duration]);
+
+  return (
+    <span ref={scope} className="opacity-0 inline-block">
+      {value}
+    </span>
+  );
+}
 
 // ── Fade-in on scroll ──────────────────────────────────────────────
 export function FadeInSection({
@@ -284,12 +317,12 @@ function ProductShowcase({
   }, [products.length]);
 
   return (
-    <section className="py-24 lg:py-32 bg-white border-t border-[#e8e8e8]">
+    <section className="py-16 lg:py-32 bg-white border-t border-[#e8e8e8]">
       <div className="page-container">
         <div className={`grid items-center gap-16 lg:grid-cols-2 ${flip ? "lg:[direction:rtl]" : ""}`}>
 
-          {/* Image Panel */}
-          <FadeInSection variant="image" className={flip ? "lg:[direction:ltr]" : ""}>
+          {/* Image Panel - Hidden on mobile */}
+          <FadeInSection variant="image" className={`hidden lg:block ${flip ? "lg:[direction:ltr]" : ""}`}>
             <div
               className="relative flex items-center justify-center h-[360px] lg:h-[500px] border border-[#e8e8e8] overflow-hidden transition-colors duration-700"
               style={{ background: `${current.accentColor}15` }}
@@ -457,9 +490,9 @@ function EditorialSection({
 }) {
   return (
     <section className={`border-t border-[#e8e8e8] relative overflow-hidden`} style={{ backgroundColor: bg }}>
-      <div className={`flex flex-col lg:flex-row min-h-[600px] ${flip ? "lg:flex-row-reverse" : ""}`}>
+      <div className={`flex flex-col lg:flex-row min-h-[400px] lg:min-h-[600px] ${flip ? "lg:flex-row-reverse" : ""}`}>
         {/* Content Side */}
-        <div className="w-full lg:w-1/2 flex items-center py-20 px-6 lg:px-20 xl:px-32">
+        <div className="w-full lg:w-1/2 flex items-center py-16 lg:py-32 px-8 lg:px-24 xl:px-40">
           <div className="max-w-xl">
             <FadeInSection delay={50}>
               <span className="section-kicker !bg-white/10 !text-white !border-white/30 uppercase tracking-[0.2em]">
@@ -491,8 +524,8 @@ function EditorialSection({
           </div>
         </div>
 
-        {/* Image Side - Full Bleed */}
-        <FadeInSection variant="image" className="w-full lg:w-1/2 min-h-[400px] lg:min-h-0 relative">
+        {/* Image Side - Full Bleed - Hidden on mobile */}
+        <FadeInSection variant="image" className="hidden lg:block w-full lg:w-1/2 min-h-[300px] lg:min-h-0 relative">
           <img
             src={image}
             alt={imageAlt}
@@ -510,12 +543,12 @@ function EditorialSection({
 export default function Home() {
   const { t, locale } = useI18n();
   const copy = homeCopyByLocale[locale];
-  const heroRef   = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
 
-  const areiasProducts  = areiasAssets.map((a, i)  => ({ ...a, ...t.areias.products[i] }));
+  const areiasProducts = areiasAssets.map((a, i) => ({ ...a, ...t.areias.products[i] }));
   const toppersProducts = toppersAssets.map((a, i) => ({ ...a, ...t.toppers.products[i] }));
 
-// useEffect e refs removidos para tirar o produto flutuante
+  // useEffect e refs removidos para tirar o produto flutuante
 
   return (
     <main className="overflow-hidden bg-white">
@@ -525,28 +558,30 @@ export default function Home() {
       </Helmet>
 
       {/* ══ HERO — Brand Blue Block ══ */}
-      <section ref={heroRef} className="relative h-[100dvh] flex items-center overflow-hidden bg-[#5bbced] pt-20">
-        {/* Full-bleed image panel (Right side) */}
-        <div className="absolute top-0 right-0 w-full lg:w-1/2 h-[450px] lg:h-full z-0">
-          <motion.img
-            src="/images/home-hero-lifestyle.png"
-            alt={copy.heroImageAlt}
-            className="w-full h-full object-cover object-center opacity-80"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.8 }}
-            transition={{ duration: 1.2 }}
-          />
+      <section ref={heroRef} className="relative lg:h-[93dvh] flex flex-col items-stretch overflow-hidden bg-[#5bbced]">
+        {/* Full-bleed image panel (Right side) - Hidden on mobile */}
+        <div className="hidden lg:block relative lg:absolute top-0 right-0 w-full lg:w-1/2 h-full z-0 order-1 lg:order-2">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="w-full h-full object-cover object-center"
+          >
+            <source src="/videos/video_Site_2.mp4?v=1" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-r from-[#5bbced] from-0% via-[#5bbced]/10 via-30% to-transparent hidden lg:block" />
         </div>
 
-        <div className="page-container relative z-10 w-full">
+        <div className="page-container relative z-10 w-full order-2 lg:order-1 flex items-center">
           <div className="grid lg:grid-cols-2 items-center">
             {/* Left — Text (White on Blue) */}
-            <div className="py-24 lg:py-32 lg:pr-16 p-8 lg:p-0">
+            <div className="py-8 lg:py-32 lg:pr-16">
               <FadeInSection delay={50}>
                 <span className="section-kicker !bg-white/10 !text-white !border-white/30 uppercase tracking-[0.2em]">{t.hero.kicker}</span>
               </FadeInSection>
-              
+
               <FadeInSection delay={130} className="mt-8">
                 <h1 className="heading-xl leading-[0.95] tracking-wide !text-white">
                   {t.hero.title}
@@ -573,24 +608,26 @@ export default function Home() {
                 </div>
               </FadeInSection>
 
-              <FadeInSection delay={400} className="mt-16">
-                <div className="flex items-center gap-10 pt-10 border-t border-white/20">
+              <FadeInSection delay={400} className="mt-12 lg:mt-16">
+                <div className="flex flex-wrap items-center gap-8 lg:gap-10 pt-10 border-t border-white/20">
                   {[
                     { value: t.hero.stat100, label: t.hero.badgeNatural },
                     { value: t.hero.statZero, label: t.hero.badgePlastic },
-                    { value: t.hero.statBio,  label: t.hero.badgeBio },
+                    { value: t.hero.statBio, label: t.hero.badgeBio },
                   ].map((s, i) => (
                     <div key={i} className="flex flex-col">
-                      <span className="text-[2rem] font-bold leading-none text-white">{s.value}</span>
-                      <span className="text-[10px] text-white/70 uppercase tracking-[0.2em] font-bold mt-2">{s.label}</span>
+                      <span className="text-[2.8rem] font-black leading-none text-white tracking-tight">
+                        <CountUp value={s.value} duration={2 + i * 0.5} />
+                      </span>
+                      <span className="text-xs text-white/70 uppercase tracking-[0.25em] font-bold mt-3">
+                        {s.label}
+                      </span>
                     </div>
                   ))}
                 </div>
               </FadeInSection>
             </div>
 
-            {/* Right side spacer for mobile layout */}
-            <div className="h-[500px] lg:h-0" />
           </div>
         </div>
       </section>
@@ -645,7 +682,7 @@ export default function Home() {
 
       {/* ══ EDITORIAL — Lifestyle woman and dog ══ */}
       <EditorialSection
-        image="/images/home-hero-lifestyle.png"
+        image="/images/hero-gatoecachrro.png"
         imageAlt={copy.editorialOne.imageAlt}
         kicker={copy.editorialOne.kicker}
         title={copy.editorialOne.title}
@@ -677,7 +714,7 @@ export default function Home() {
       </section>
 
       {/* ══ PARTNERSHIPS — Brand Blue Block ══ */}
-      <section className="py-24 bg-[#5bbced] text-white">
+      <section className="py-16 lg:py-32 bg-[#5bbced] text-white">
         <div className="page-container">
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
             <FadeInSection>
@@ -699,7 +736,7 @@ export default function Home() {
       </section>
 
       {/* ══ CTA FINAL ══ */}
-      <section className="py-28 bg-[#174878] relative overflow-hidden">
+      <section className="py-16 lg:py-32 bg-[#174878] relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-2 bg-[#5bbced]" />
         <div className="page-container text-center text-white relative z-10">
           <FadeInSection>

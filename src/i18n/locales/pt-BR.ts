@@ -2,8 +2,8 @@ const ptBR = {
   // ─── Navegação ───────────────────────────────────────────────────
   nav: {
     home: "Início",
-    areias: "Areias",
-    toppers: "Toppers",
+    areias: "Linha para Gatos",
+    toppers: "Linha para Cães",
     b2b: "Parceiros B2B",
     buy: "Comprar",
     language: "Idioma",
@@ -80,8 +80,8 @@ const ptBR = {
   },
   areias: {
     kicker: "Felinos Exigentes",
-    title: "Linha",
-    titleHighlight: "Areias Super Premium",
+    title: "Areias",
+    titleHighlight: "higienicas biodegradáveis",
     seeAll: "Ver Coleção Completa",
     pageTitle: "Areias Super Premium Biodegradáveis para Gatos",
     pageSubtitle:
@@ -110,6 +110,7 @@ const ptBR = {
       {
         id: "tradicional",
         name: "Tradicional",
+        subtitle: "A pureza da mandioca para o seu gato",
         description:
           "Nossa fórmula clássica super premium à base de mandioca para um ambiente livre de odores e torrões firmes.",
         badges: [
@@ -122,6 +123,7 @@ const ptBR = {
       {
         id: "capim-limao",
         name: "Capim-Limão",
+        subtitle: "Frescor natural e controle cítrico",
         description:
           "O poder da mandioca aliado ao toque herbal do capim-limão. Excelente neutralização de odores.",
         badges: [
@@ -134,6 +136,7 @@ const ptBR = {
       {
         id: "lavanda",
         name: "Lavanda",
+        subtitle: "Toque floral para um ambiente sereno",
         description:
           "O aroma relaxante da lavanda para transformar a bandeja do seu felino em um ambiente tranquilo.",
         badges: [
@@ -187,7 +190,7 @@ const ptBR = {
   toppers: {
     kicker: "Cães Saudáveis",
     title: "Linha",
-    titleHighlight: "Toppers",
+    titleHighlight: "Farofas para cachorro!",
     seeAll: "Ver Coleção Completa",
     pageTitle: "Toppers Nutricionais para Cães",
     pageSubtitle:
@@ -206,6 +209,7 @@ const ptBR = {
       {
         id: "frango",
         name: "Sabor Frango",
+        subtitle: "Proteína real e crocância irresistível",
         description:
           "Topper de mandioca e proteínas de frango reais. Uma camada extra de sabor irresistível.",
         badges: [
@@ -218,6 +222,7 @@ const ptBR = {
       {
         id: "carne",
         name: "Sabor Carne",
+        subtitle: "Energia pura com proteína bovina",
         description:
           "Desenvolvido com proteína bovina e mandioca, oferecendo a dose certa de energia.",
         badges: [
@@ -230,6 +235,7 @@ const ptBR = {
       {
         id: "figado",
         name: "Sabor Fígado",
+        subtitle: "Rico em ferro e vitaminas naturais",
         description:
           "A essência irresistível do fígado que vai fazer seu melhor amigo amar a hora de comer.",
         badges: [

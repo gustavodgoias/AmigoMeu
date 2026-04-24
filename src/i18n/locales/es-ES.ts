@@ -2,8 +2,8 @@ const esES = {
   // ─── Navegación ───────────────────────────────────────────────────
   nav: {
     home: "Inicio",
-    areias: "Arenas",
-    toppers: "Toppers",
+    areias: "Línea de Gatos",
+    toppers: "Línea de Perros",
     b2b: "Socios B2B",
     buy: "Comprar",
     language: "Idioma",
@@ -112,6 +112,7 @@ const esES = {
       {
         id: "tradicional",
         name: "Tradicional",
+        subtitle: "La pureza de la mandioca para tu gato",
         description:
           "Nuestra fórmula clásica super premium a base de mandioca para un ambiente libre de olores y terrones firmes.",
         badges: [
@@ -124,6 +125,7 @@ const esES = {
       {
         id: "capim-limao",
         name: "Hierba Limón",
+        subtitle: "Frescura natural y control cítrico",
         description:
           "El poder de la mandioca con el toque herbal de hierba limón. Excelente neutralización de olores.",
         badges: [
@@ -136,6 +138,7 @@ const esES = {
       {
         id: "lavanda",
         name: "Lavanda",
+        subtitle: "Toque floral para un ambiente sereno",
         description:
           "El aroma relajante de lavanda para transformar la bandeja en un entorno más tranquilo.",
         badges: [
@@ -205,6 +208,7 @@ const esES = {
       {
         id: "frango",
         name: "Sabor Pollo",
+        subtitle: "Proteína real y crocancia irresistible",
         description:
           "Topper de mandioca con proteína real de pollo. Una capa extra de sabor irresistible.",
         badges: [
@@ -217,6 +221,7 @@ const esES = {
       {
         id: "carne",
         name: "Sabor Carne",
+        subtitle: "Energía pura con proteína bovina",
         description:
           "Desarrollado con proteína bovina y mandioca para entregar energía y alta aceptación.",
         badges: [
@@ -229,6 +234,7 @@ const esES = {
       {
         id: "figado",
         name: "Sabor Hígado",
+        subtitle: "Rico en hierro y vitaminas naturales",
         description:
           "La esencia irresistible del hígado para que tu mejor amigo disfrute cada comida.",
         badges: [

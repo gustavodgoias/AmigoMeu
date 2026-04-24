@@ -415,18 +415,19 @@ export default function Areias() {
 
       {/* Dynamic Hero — Brand Color Block */}
       <section 
-        className="relative h-[100dvh] flex items-center overflow-hidden pt-20 transition-colors duration-700"
+        className="relative lg:h-[93dvh] flex flex-col items-stretch overflow-hidden transition-colors duration-700"
         style={{ backgroundColor: current.accentColor }}
       >
-        <div className="absolute top-0 right-0 w-full lg:w-1/2 h-[450px] lg:h-full z-0">
-          <motion.img
-            src="/images/hero_areias_lifestyle_v2.png"
-            alt={pageCopy.heroAlt}
-            className="w-full h-full object-cover object-center opacity-80"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.8 }}
-            transition={{ duration: 1.2 }}
-          />
+        <div className="hidden lg:block relative lg:absolute top-0 right-0 w-full lg:w-1/2 h-full z-0 order-1 lg:order-2">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover object-center opacity-70"
+          >
+            <source src="/videos/gato02.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent hidden lg:block" />
           {areiasProducts.map((p, i) => (
             <div 
@@ -438,25 +439,12 @@ export default function Areias() {
             />
           ))}
 
-          <div className="absolute bottom-12 left-12 lg:left-24 z-20">
-            <AnimatePresence mode="popLayout">
-              <motion.img
-                key={current.id}
-                src={current.image}
-                alt={current.name}
-                className="h-[180px] lg:h-[240px] w-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
-                initial={{ opacity: 0, scale: 0.8, y: 30 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.8, y: 30 }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              />
-            </AnimatePresence>
-          </div>
+
         </div>
 
-        <div className="page-container relative z-10 w-full">
+        <div className="page-container relative z-10 w-full order-2 lg:order-1 flex items-center">
           <div className="grid lg:grid-cols-2 items-center">
-            <div className="py-24 lg:py-32 lg:pr-16 p-8 lg:p-0">
+            <div className="py-8 lg:py-32 lg:pr-16">
               <FadeInSection delay={50}>
                 <motion.span
                   className="section-kicker !bg-white/10 !text-white !border-white/30 uppercase tracking-[0.2em]"
@@ -520,13 +508,13 @@ export default function Areias() {
                 </div>
               </FadeInSection>
             </div>
-            <div className="h-[450px] lg:h-0" />
+
           </div>
         </div>
       </section>
 
       {/* Product details */}
-      <section className="py-24 border-t border-[#e8e8e8] bg-white">
+      <section className="py-12 lg:py-24 border-t border-[#e8e8e8] bg-white">
         <div className="page-container mb-24">
           <FadeInSection className="text-center">
             <span className="section-kicker">{pageCopy.fullLine}</span>
@@ -541,7 +529,7 @@ export default function Areias() {
                 <FadeInSection delay={80}>
                   <div className="grid lg:grid-cols-2 min-h-[500px]">
                     <div
-                      className={`relative flex items-center justify-center p-12 lg:p-20 ${
+                      className={`hidden lg:flex relative items-center justify-center p-8 py-16 lg:p-32 ${
                         idx % 2 !== 0 ? "lg:order-2" : "lg:order-1"
                       }`}
                       style={{ backgroundColor: product.bgTint }}
@@ -558,7 +546,7 @@ export default function Areias() {
                     </div>
 
                     <div
-                      className={`p-10 lg:p-20 bg-white flex flex-col justify-center gap-6 ${
+                      className={`p-8 py-16 lg:p-32 bg-white flex flex-col justify-center gap-6 ${
                         idx % 2 !== 0 ? "lg:order-1" : "lg:order-2"
                       }`}
                     >
@@ -615,7 +603,7 @@ export default function Areias() {
       </section>
 
       {/* Expanded market comparison */}
-      <section className="py-24 bg-white border-t border-[#e8e8e8]">
+      <section className="py-12 lg:py-24 bg-white border-t border-[#e8e8e8]">
         <div className="page-container">
           <FadeInSection className="text-center mb-16">
             <span className="section-kicker">{comparisonHeader.kicker}</span>
@@ -623,11 +611,18 @@ export default function Areias() {
           </FadeInSection>
 
           <FadeInSection delay={150}>
-            <div className="overflow-x-auto border border-[#e8e8e8]">
-              <table className="w-full text-left border-collapse min-w-[760px]">
+            <div className="relative">
+              {/* Mobile Scroll Hint */}
+              <div className="lg:hidden flex items-center justify-center gap-2 mb-4 text-[0.7rem] font-bold uppercase tracking-widest text-[#90C63E] animate-pulse">
+                <span>Deslize para comparar</span>
+                <ArrowRight className="h-3 w-3" />
+              </div>
+              
+              <div className="overflow-x-auto border border-[#e8e8e8] rounded-sm">
+                <table className="w-full text-left border-collapse min-w-[700px]">
                 <thead>
                   <tr className="bg-[#111118] text-white">
-                    <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.15em]">
+                    <th className="sticky left-0 z-20 bg-[#111118] px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.15em]">
                       {comparisonHeader.feature}
                     </th>
                     <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-[#90C63E]">
@@ -646,7 +641,7 @@ export default function Areias() {
                         idx % 2 === 0 ? "bg-white" : "bg-[#fafafa]"
                       }`}
                     >
-                      <td className="px-6 py-5 text-[0.78rem] font-bold text-[#1a1a1a] uppercase tracking-[0.08em] align-top">
+                      <td className="sticky left-0 z-10 bg-inherit px-6 py-5 text-[0.78rem] font-bold text-[#1a1a1a] uppercase tracking-[0.08em] align-top border-r border-[#f1f1f1]">
                         {row.feature}
                       </td>
                       <td className="px-6 py-5 text-[0.9rem] text-[#2b2b2b] align-top">
@@ -663,9 +658,10 @@ export default function Areias() {
                 </tbody>
               </table>
             </div>
-            <p className="mt-4 text-[0.8rem] text-[#888888] font-medium">{comparisonHeader.note}</p>
-          </FadeInSection>
-        </div>
+          </div>
+          <p className="mt-4 text-[0.8rem] text-[#888888] font-medium">{comparisonHeader.note}</p>
+        </FadeInSection>
+      </div>
       </section>
 
       <section className="border-t border-[#e8e8e8]">

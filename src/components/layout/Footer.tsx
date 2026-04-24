@@ -27,14 +27,14 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-[#111118] text-white overflow-hidden relative border-t-8 border-[#5bbced]">
-      <div className="py-24 lg:py-32 relative z-10">
-        <div className="w-full px-6 lg:px-20 mx-auto max-w-[1400px]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 border-b border-white/10 pb-20">
+      <div className="py-12 lg:py-12 relative z-10">
+        <div className="w-full px-6 lg:px-10 mx-auto max-w-[1400px]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 border-b border-white/10 pb-12 lg:pb-10">
             <div className="lg:col-span-5 space-y-8">
               <img
                 src={logoSrc}
                 alt="Amigo Meu Pet Feliz"
-                className="h-14 w-auto brightness-0 invert opacity-100"
+                className="h-10 lg:h-14 w-auto brightness-0 invert opacity-100"
               />
               <p className="max-w-md text-[1rem] leading-relaxed text-white/60 font-light">
                 {t.footer.tagline}
@@ -60,7 +60,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="lg:col-span-3 lg:col-start-7 space-y-8">
+            <div className="hidden lg:block lg:col-span-3 lg:col-start-7 space-y-8">
               <h4 className="text-[0.75rem] font-bold tracking-[0.15em] text-white/40 uppercase">
                 {t.footer.explore}
               </h4>
@@ -119,7 +119,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-6 pt-10 text-[0.85rem] font-medium text-white/40 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-6 pt-8 lg:pt-10 text-[0.85rem] font-medium text-white/40 md:flex-row md:items-center md:justify-between">
             <p>
               © {currentYear} Amigo Meu Pet Feliz. {t.footer.rights}
             </p>

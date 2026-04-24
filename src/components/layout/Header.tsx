@@ -58,8 +58,8 @@ export default function Header() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-400 ${
           scrolled
-            ? "py-3 bg-white/96 backdrop-blur-md border-b border-[#e8e8e8] shadow-sm"
-            : "py-5 bg-white border-b border-[#e8e8e8]/70"
+            ? "py-2 lg:py-3 bg-white/96 backdrop-blur-md border-b border-[#e8e8e8] shadow-sm"
+            : "py-3 lg:py-5 bg-white border-b border-[#e8e8e8]/70"
         }`}
       >
         <motion.div
@@ -73,7 +73,7 @@ export default function Header() {
               <img
                 src="/images/brand/amigomeu-logo-preferencial.png"
                 alt="Amigo Meu Pet Feliz"
-                className={`w-auto transition-all duration-300 ${scrolled ? "h-7" : "h-9"}`}
+                className={`w-auto transition-all duration-300 ${scrolled ? "h-6 lg:h-7" : "h-7 lg:h-9"}`}
               />
             </Link>
 
@@ -115,9 +115,13 @@ export default function Header() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.18 }}
-              className="absolute inset-x-0 top-full border-b border-[#e8e8e8] bg-white shadow-md lg:hidden"
+              className={`fixed inset-0 ${scrolled ? 'top-[54px]' : 'top-[62px]'} bg-white lg:hidden z-[100] overflow-y-auto`}
             >
-              <nav className="flex flex-col px-6 py-6">
+              <motion.nav 
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="flex flex-col px-8 py-10 h-full"
+              >
                 {navItems.map((item) => (
                   <NavLink
                     key={item.href}
@@ -142,13 +146,13 @@ export default function Header() {
                     {t.nav.buy}
                   </Link>
                 </div>
-              </nav>
+              </motion.nav>
             </motion.div>
           )}
         </AnimatePresence>
       </header>
 
-      <div className={scrolled ? "h-[57px]" : "h-[73px]"} style={{ transition: "height 0.3s" }} />
+      <div className={scrolled ? "h-[54px] lg:h-[57px]" : "h-[62px] lg:h-[73px]"} style={{ transition: "height 0.3s" }} />
     </>
   );
 }

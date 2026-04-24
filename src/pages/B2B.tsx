@@ -99,7 +99,7 @@ const b2bPageCopyByLocale: Record<
         kicker: "Toppers Funcionais",
         title: "Por que revender nossos toppers",
         highlight: "junto com rações",
-        image: "/images/hero-toppers.png",
+        image: "/images/home-hero-lifestyle.png",
         accent: "#C8A21A",
         topics: [
           {
@@ -315,51 +315,32 @@ export default function B2B() {
       </Helmet>
 
       {/* Hero — Brand Blue Block */}
-      <section className="relative h-[100dvh] flex items-center overflow-hidden bg-[#5bbced] pt-20">
-        <div className="absolute top-0 right-0 w-full lg:w-1/2 h-[450px] lg:h-full z-0">
-          <motion.img
-            src="/images/home-hero-lifestyle.png"
-            alt={pageCopy.heroAlt}
-            className="w-full h-full object-cover object-center opacity-80"
+      <section className="relative lg:h-[93dvh] flex flex-col items-stretch overflow-hidden bg-[#5bbced]">
+        <div className="hidden lg:block relative lg:absolute top-0 right-0 w-full lg:w-1/2 h-full z-0 order-1 lg:order-2">
+          <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.8 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
-          />
+            className="w-full h-full"
+          >
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover object-center"
+            >
+              <source src="/videos/video_Site_2.mp4" type="video/mp4" />
+            </video>
+          </motion.div>
           <div className="absolute inset-0 bg-gradient-to-r from-[#5bbced] from-0% via-[#5bbced]/10 via-30% to-transparent hidden lg:block" />
 
-          <div className="absolute bottom-12 left-12 lg:left-16 z-20 scale-90 lg:scale-100">
-            <div className="relative flex items-end">
-              <motion.img
-                src="/images/produtos/AMIGO-MEU-2KG-2025-TRADICIONAL.png"
-                alt={pageCopy.areiaAlt}
-                className="h-[220px] lg:h-[300px] w-auto object-contain drop-shadow-2xl"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6 }}
-              />
-              <motion.img
-                src="/images/produtos/AMIGOMEU-TOPPER-FRANGO-100G.png"
-                alt={pageCopy.topperFrangoAlt}
-                className="h-[120px] lg:h-[160px] w-auto object-contain drop-shadow-xl -ml-12 mb-4 rotate-6"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.8 }}
-              />
-              <motion.img
-                src="/images/produtos/AMIGOMEU-TOPPER-CARNE-100G.png"
-                alt={pageCopy.topperCarneAlt}
-                className="h-[120px] lg:h-[160px] w-auto object-contain drop-shadow-xl -ml-8 mb-2 -rotate-3"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.0 }}
-              />
-            </div>
-          </div>
+
         </div>
 
-        <div className="page-container relative z-10 w-full">
+        <div className="page-container relative z-10 w-full order-2 lg:order-1 flex items-center">
           <div className="grid lg:grid-cols-2 items-center">
-            <div className="py-24 lg:py-32 lg:pr-16">
+            <div className="py-12 lg:py-32 lg:pr-16">
               <FadeInSection delay={50}>
                 <span className="section-kicker !bg-white/20 !text-white !border-white/30 uppercase tracking-[0.2em]">
                   <Briefcase className="h-3.5 w-3.5" />
@@ -376,7 +357,7 @@ export default function B2B() {
               </FadeInSection>
 
               <FadeInSection delay={210} className="mt-8">
-                <p className="text-[1.25rem] leading-relaxed text-white/90 max-w-md font-light">
+                <p className="text-[1.35rem] leading-relaxed text-white max-w-md">
                   {t.b2b.description}
                 </p>
               </FadeInSection>
@@ -397,7 +378,7 @@ export default function B2B() {
               </FadeInSection>
             </div>
 
-            <div className="h-[450px] lg:h-0" />
+
           </div>
         </div>
       </section>
@@ -408,11 +389,11 @@ export default function B2B() {
           <div className="flex flex-col">
             {pageCopy.tracks.map((track, index) => (
               <FadeInSection key={track.id} delay={index * 120} className="w-full">
-                <article 
+                <article
                   className="overflow-hidden min-h-[600px] flex items-center"
                   style={{ backgroundColor: track.accent }}
                 >
-                  <div className="page-container w-full py-20 lg:py-0">
+                  <div className="page-container w-full py-24 lg:py-32">
                     <div className="grid lg:grid-cols-2 items-center gap-16">
                       <div
                         className={`${index % 2 !== 0 ? "lg:order-2" : "lg:order-1"} relative h-[400px] lg:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl`}
@@ -440,7 +421,7 @@ export default function B2B() {
                           {track.topics.map((topic) => (
                             <div
                               key={topic.title}
-                              className="group p-6 bg-white/10 backdrop-blur-md border border-white/20 transition-all hover:bg-white/20"
+                              className="group p-10 bg-white/10 backdrop-blur-md border border-white/20 transition-all hover:bg-white/20"
                             >
                               <div
                                 className="w-12 h-12 flex items-center justify-center bg-white text-[#1a1a1a] mb-6"
@@ -448,10 +429,10 @@ export default function B2B() {
                               >
                                 <topic.icon className="h-6 w-6" strokeWidth={2} />
                               </div>
-                              <h4 className="text-[0.8rem] font-bold uppercase tracking-[0.1em] text-white">
+                              <h4 className="text-base font-bold uppercase tracking-[0.1em] text-white">
                                 {topic.title}
                               </h4>
-                              <p className="mt-3 text-[0.9rem] text-white/80 leading-relaxed font-light">
+                              <p className="mt-3 text-[1.1rem] text-white/90 leading-relaxed">
                                 {topic.description}
                               </p>
                             </div>
@@ -527,7 +508,7 @@ export default function B2B() {
                   <h3 className="text-[2rem] font-black text-[#1a1a1a] tracking-tight uppercase leading-[0.95]">
                     {t.b2b.form.title}
                   </h3>
-                  <p className="text-[1rem] text-[#666666] font-light mt-4 leading-relaxed">{t.b2b.form.subtitle}</p>
+                  <p className="text-[1.1rem] text-[#666666] mt-4 leading-relaxed">{t.b2b.form.subtitle}</p>
                 </div>
 
                 {formSent ? (
@@ -550,13 +531,13 @@ export default function B2B() {
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid gap-5 sm:grid-cols-2">
                       <div className="space-y-2">
-                        <label className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#888888]">
+                        <label className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-[#888888]">
                           {t.b2b.form.labelName}
                         </label>
                         <input placeholder={t.b2b.form.placeholderName} className="input-field" required />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#888888]">
+                        <label className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-[#888888]">
                           {t.b2b.form.labelCompany}
                         </label>
                         <input placeholder={t.b2b.form.placeholderCompany} className="input-field" required />
@@ -564,20 +545,20 @@ export default function B2B() {
                     </div>
                     <div className="grid gap-5 sm:grid-cols-2">
                       <div className="space-y-2">
-                        <label className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#888888]">
+                        <label className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-[#888888]">
                           {t.b2b.form.labelEmail}
                         </label>
                         <input type="email" placeholder={t.b2b.form.placeholderEmail} className="input-field" required />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#888888]">
+                        <label className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-[#888888]">
                           {t.b2b.form.labelPhone}
                         </label>
                         <input placeholder={t.b2b.form.placeholderPhone} className="input-field" required />
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#888888]">
+                      <label className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-[#888888]">
                         {t.b2b.form.labelMessage}
                       </label>
                       <textarea rows={4} placeholder={t.b2b.form.placeholderMessage} className="textarea-field" />

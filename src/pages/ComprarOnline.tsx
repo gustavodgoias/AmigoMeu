@@ -22,7 +22,7 @@ const channelUrls = [
 
 export default function ComprarOnline() {
   const { t } = useI18n();
-  
+
   const onlineChannels = t.buy.channels.map((channel, idx) => ({
     ...channel,
     url: channelUrls[idx],
@@ -31,7 +31,7 @@ export default function ComprarOnline() {
     hoverColor: channelHovers[idx],
   }));
   return (
-    <main className="overflow-hidden h-[100dvh]">
+    <main className="overflow-hidden min-h-screen">
       <Helmet>
         <title>{t.nav.buy} | Amigo Meu</title>
         <meta
@@ -41,7 +41,7 @@ export default function ComprarOnline() {
       </Helmet>
 
       {/* Hero — Brand Blue Block */}
-      <section className="relative h-[100dvh] flex items-center bg-[#5bbced] text-white overflow-hidden pt-20">
+      <section className="relative min-h-0 lg:h-[93dvh] flex items-center bg-[#5bbced] text-white overflow-hidden pt-[73px] lg:pt-0 py-12 lg:py-0">
         <div className="page-container relative z-10 text-left">
           <FadeInSection>
             <div className="flex h-24 w-24 items-center justify-center bg-white/20 border-2 border-white/30 backdrop-blur-md rounded-full text-white mb-10">
@@ -62,7 +62,7 @@ export default function ComprarOnline() {
       </section>
 
       {/* Sales Channels */}
-      <section className="py-24 bg-[#fafafa]">
+      <section className="py-16 lg:py-32 bg-[#fafafa]">
         <div className="page-container max-w-6xl">
           <div className="grid gap-10 md:grid-cols-3">
             {onlineChannels.map((channel, i) => (
@@ -93,12 +93,12 @@ export default function ComprarOnline() {
       </section>
 
       {/* B2B Footer CTA */}
-      <section className="py-24 bg-[#111118]">
+      <section className="py-16 lg:py-32 bg-[#111118]">
         <div className="page-container max-w-5xl">
           <FadeInSection>
             <div className="relative overflow-hidden bg-white px-10 py-20 lg:flex lg:items-center lg:justify-between lg:text-left shadow-2xl border-l-[12px] border-[#5bbced]">
               <div className="relative z-10 space-y-4 max-w-xl text-center lg:text-left">
-                <h3 className="text-[2rem] font-black text-[#1a1a1a] tracking-tight uppercase leading-none">{t.cta.title} <br/><span className="text-[#5bbced]">{t.cta.titleHighlight}</span></h3>
+                <h3 className="text-[2rem] font-black text-[#1a1a1a] tracking-tight uppercase leading-none">{t.cta.title} <br /><span className="text-[#5bbced]">{t.cta.titleHighlight}</span></h3>
                 <p className="text-[#666666] font-light text-lg mt-4">
                   {t.b2b.description}
                 </p>

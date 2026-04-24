@@ -146,22 +146,28 @@
   }
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .cursor-enhanced,
-  .cursor-enhanced a,
-  .cursor-enhanced button,
-  .cursor-enhanced [role="button"],
-  .cursor-enhanced select,
-  .cursor-enhanced [data-cursor="active"] {
-    cursor: none !important;
+  /* DESKTOP: Hide default cursor when enhanced cursor is enabled */
+  @media (min-width: 1024px) {
+    .cursor-enhanced,
+    .cursor-enhanced :not(input):not(textarea):not([contenteditable="true"]) {
+      cursor: none !important;
+    }
   }
 
+  /* MOBILE/TABLET: Force default cursor visibility */
+  @media (max-width: 1023px) {
+    .cursor-enhanced,
+    .cursor-enhanced * {
+      cursor: auto !important;
+    }
+  }
+
+  /* Ensure text cursor always works for inputs */
   .cursor-enhanced input,
   .cursor-enhanced textarea,
   .cursor-enhanced [contenteditable="true"] {
     cursor: text !important;
   }
-}
 
 @media (prefers-reduced-motion: reduce) {
   *,

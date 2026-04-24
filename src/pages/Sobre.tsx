@@ -342,17 +342,42 @@ export default function Sobre() {
         <meta name="description" content={copy.pageDescription} />
       </Helmet>
 
-      {/* Hero — Brand Blue Block */}
-      <section className="py-32 bg-[#5bbced] text-white h-[100dvh] flex items-center">
-        <div className="page-container max-w-6xl">
-          <FadeInSection className="text-left">
-            <span className="section-kicker !bg-white/20 !text-white !border-white/30 uppercase tracking-[0.2em]">
+      {/* Hero — Immersive Video Background */}
+      <section className="relative py-32 bg-[#5bbced] text-white h-[93dvh] flex items-center overflow-hidden">
+        {/* Background Video — subtle texture */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute h-full w-full object-cover"
+          >
+            <source src="/videos/valores.mp4" type="video/mp4" />
+          </video>
+          {/* Strong overlays for branding and legibility */}
+          <div className="absolute inset-0 bg-[#5bbced]/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#5bbced] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#5bbced] via-transparent to-transparent opacity-95" />
+        </div>
+
+        <div className="page-container relative z-10 text-center flex flex-col items-center justify-center">
+          <FadeInSection>
+            {/* Kicker */}
+            <span className="section-kicker !bg-white/10 !text-white/80 !border-white/20 uppercase tracking-[0.4em] text-[0.65rem] mx-auto">
               {copy.topKicker}
             </span>
-            <h1 className="heading-xl !text-white mt-8 uppercase tracking-tight leading-[0.95]">
+
+            {/* Main heading */}
+            <h1 className="text-[4rem] lg:text-[7rem] font-black !text-white mt-10 uppercase tracking-tight leading-[0.85]">
               {copy.topTitle}
             </h1>
-            <p className="mt-8 text-white/80 text-[1.25rem] leading-relaxed max-w-3xl font-light">
+
+            {/* Decorative divider */}
+            <div className="mt-12 mb-10 mx-auto w-24 h-[3px] bg-white/40 rounded-full" />
+
+            {/* Intro text */}
+            <p className="text-white/80 max-w-2xl mx-auto text-[1.3rem] leading-[1.8] tracking-wider font-light">
               {copy.topDescription}
             </p>
           </FadeInSection>
@@ -363,15 +388,15 @@ export default function Sobre() {
       <section className="py-0">
         <FadeInSection>
           <article className="grid lg:grid-cols-2 bg-[#90C63E] text-white overflow-hidden min-h-[600px] items-center">
-            <div className="relative h-[400px] lg:h-full order-1 lg:order-2">
+            <div className="hidden lg:block relative h-full order-1 lg:order-2">
               <img
-                src="/images/home-hero-lifestyle.png"
+                src="/images/hero-gatoecachrro.png"
                 alt={copy.missionImageAlt}
                 className="absolute inset-0 w-full h-full object-cover grayscale-[0.2]"
               />
               <div className="absolute inset-0 bg-black/10" />
             </div>
-            <div className="p-8 lg:p-24 flex flex-col justify-center order-2 lg:order-1">
+            <div className="p-12 lg:p-32 flex flex-col justify-center order-2 lg:order-1">
               <span className="section-kicker !bg-white/20 !text-white !border-white/30 w-fit uppercase tracking-[0.2em]">
                 {copy.missionKicker}
               </span>
@@ -393,7 +418,7 @@ export default function Sobre() {
 
         <FadeInSection>
           <article className="grid lg:grid-cols-2 bg-[#1a3a5a] text-white overflow-hidden min-h-[600px] items-center">
-            <div className="relative h-[400px] lg:h-full">
+            <div className="hidden lg:block relative h-full">
               <img
                 src="/images/hero-areias.png"
                 alt={copy.visionImageAlt}
@@ -401,7 +426,7 @@ export default function Sobre() {
               />
               <div className="absolute inset-0 bg-black/20" />
             </div>
-            <div className="p-8 lg:p-24 flex flex-col justify-center">
+            <div className="p-12 lg:p-32 flex flex-col justify-center">
               <span className="section-kicker !bg-white/10 !text-white !border-white/20 w-fit uppercase tracking-[0.2em]">
                 {copy.visionKicker}
               </span>
