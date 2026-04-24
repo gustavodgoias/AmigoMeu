@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronRight, CheckCircle2 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
 import { FadeInSection } from "./Home";
 import FAQ from "../components/FAQ";
 import { useI18n } from "../i18n";

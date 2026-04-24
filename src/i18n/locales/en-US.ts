@@ -110,6 +110,7 @@ const enUS = {
       {
         id: "tradicional",
         name: "Original",
+        subtitle: "The purity of cassava for your cat",
         description:
           "Our classic super-premium cassava-based formula for an odor-free environment with firm clumps.",
         badges: [
@@ -379,11 +380,6 @@ const enUS = {
         name: "Instagram @amigomeu.petfeliz",
         description:
           "Follow the news and place orders directly through our official line's direct message.",
-      },
-      {
-        name: "Instagram @amigomeuareias",
-        description:
-          "Follow our exclusive litter profile and clear your doubts via message.",
       },
     ],
     access: "Access Channel",

@@ -370,11 +370,6 @@ const esES = {
         description:
           "Siga las novedades y realice pedidos directamente por el mensaje directo de nuestra línea oficial.",
       },
-      {
-        name: "Instagram @amigomeuareias",
-        description:
-          "Siga nuestro perfil exclusivo de arenas y aclare sus dudas por mensaje.",
-      },
     ],
     access: "Acceder al Canal",
   },

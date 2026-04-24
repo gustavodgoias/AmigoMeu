@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import {
   ShoppingCart,
-  ExternalLink,
   MessageCircle,
   AtSign,
   ArrowRight,
@@ -11,13 +10,12 @@ import { FadeInSection } from "./Home";
 import { useI18n } from "../i18n";
 
 // Icons are kept here, content comes from i18n
-const channelIcons = [MessageCircle, AtSign, AtSign];
-const channelColors = ["bg-white/50", "bg-white/50", "bg-white/50"];
-const channelHovers = ["hover:border-primary-400", "hover:border-accent-400", "hover:border-primary-400"];
+const channelIcons = [MessageCircle, AtSign];
+const channelColors = ["bg-white/50", "bg-white/50"];
+const channelHovers = ["hover:border-primary-400", "hover:border-accent-400"];
 const channelUrls = [
   "https://wa.me/5519999902520",
-  "https://instagram.com/amigomeu.petfeliz",
-  "https://instagram.com/amigomeuareias"
+  "https://instagram.com/amigomeu.petfeliz"
 ];
 
 export default function ComprarOnline() {
@@ -64,7 +62,7 @@ export default function ComprarOnline() {
       {/* Sales Channels */}
       <section className="py-16 lg:py-32 bg-[#fafafa]">
         <div className="page-container max-w-6xl">
-          <div className="grid gap-10 md:grid-cols-3">
+          <div className="grid gap-10 md:grid-cols-2 max-w-4xl mx-auto">
             {onlineChannels.map((channel, i) => (
               <FadeInSection key={channel.name} delay={i * 100}>
                 <a

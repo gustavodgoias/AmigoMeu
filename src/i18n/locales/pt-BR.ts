@@ -381,11 +381,6 @@ const ptBR = {
         description:
           "Acompanhe as novidades e faça pedidos direto pelo direct da nossa linha oficial.",
       },
-      {
-        name: "Instagram @amigomeuareias",
-        description:
-          "Siga nosso perfil exclusivo de areias e tire suas dúvidas por mensagem.",
-      },
     ],
     access: "Acessar Canal",
   },
