@@ -295,8 +295,8 @@ function ProductShowcase({
     accentColor: string;
     btnBg: string;
     btnHover: string;
-    name: string;
-    description: string;
+    name?: string;
+    description?: string;
     badges?: string[];
   }>;
   title: string;
