@@ -101,7 +101,7 @@ const catalogCopyByLocale: Record<
     resellTitleHighlight: "Revender?",
     resellDescription:
       "Oferecemos condições especiais para lojistas e distribuidores parceiros.",
-    b2bButton: "Seja um parceiro B2B",
+    b2bButton: "B2B",
     categoryAreias: "Areias",
     categoryToppers: "Toppers",
   },
@@ -120,7 +120,7 @@ const catalogCopyByLocale: Record<
     resellTitleHighlight: "Reselling?",
     resellDescription:
       "We offer special conditions for partner retailers and distributors.",
-    b2bButton: "Become a B2B partner",
+    b2bButton: "B2B",
     categoryAreias: "Cat Litter",
     categoryToppers: "Toppers",
   },
@@ -139,7 +139,7 @@ const catalogCopyByLocale: Record<
     resellTitleHighlight: "Revender?",
     resellDescription:
       "Ofrecemos condiciones especiales para tiendas y distribuidores socios.",
-    b2bButton: "Sé un socio B2B",
+    b2bButton: "B2B",
     categoryAreias: "Arenas",
     categoryToppers: "Toppers",
   },
@@ -222,7 +222,7 @@ export default function Catalogo() {
                 <div className="group bg-white border-4 border-white shadow-xl overflow-hidden flex flex-col h-full hover:shadow-2xl transition-all duration-500 rounded-[1.5rem]">
                   <div className="flex relative aspect-[4/5] items-center justify-center p-12 bg-[#f0f0f0] group-hover:bg-white transition-colors overflow-hidden">
                     <div
-                      className="absolute top-0 left-0 w-full h-2"
+                      className="absolute bottom-0 left-0 w-full h-2"
                       style={{ backgroundColor: product.color }}
                     />
                     <img

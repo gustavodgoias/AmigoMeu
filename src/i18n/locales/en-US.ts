@@ -4,7 +4,7 @@ const enUS = {
     home: "Home",
     areias: "Cat Line",
     toppers: "Dog Line",
-    b2b: "B2B Partners",
+    b2b: "B2B",
     buy: "Shop",
     language: "Language",
     sobre: "About",
@@ -437,7 +437,7 @@ const enUS = {
       {
         question: "How can I be a reseller or distributor?",
         answer:
-          "Access the 'B2B Partners' page and fill out the accreditation form. Our commercial team will analyze your profile and contact you within 48 hours.",
+          "Access the 'B2B' page and fill out the accreditation form. Our commercial team will analyze your profile and contact you within 48 hours.",
       },
       {
         question: "Do the products have sustainable certification?",

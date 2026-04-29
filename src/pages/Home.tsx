@@ -128,15 +128,6 @@ const areiasAssets = [
 
 const toppersAssets = [
   {
-    id: "frango",
-    image: "/images/produtos/AMIGOMEU-TOPPER-FRANGO-100G.png",
-    accentColor: "#C8A21A",
-    accentLight: "#e0c050",
-    btnBg: "#C8A21A",
-    btnHover: "#a08010",
-    flavorClass: "flavor-gold",
-  },
-  {
     id: "carne",
     image: "/images/produtos/AMIGOMEU-TOPPER-CARNE-100G.png",
     accentColor: "#b53c2f",
@@ -144,6 +135,15 @@ const toppersAssets = [
     btnBg: "#b53c2f",
     btnHover: "#8f2d23",
     flavorClass: "flavor-red",
+  },
+  {
+    id: "frango",
+    image: "/images/produtos/AMIGOMEU-TOPPER-FRANGO-100G.png",
+    accentColor: "#C8A21A",
+    accentLight: "#e0c050",
+    btnBg: "#C8A21A",
+    btnHover: "#a08010",
+    flavorClass: "flavor-gold",
   },
   {
     id: "figado",
@@ -329,7 +329,7 @@ function ProductShowcase({
             >
               {/* Color stripe top — matches current product */}
               <motion.div
-                className="absolute top-0 left-0 right-0 h-1"
+                className="absolute bottom-0 left-0 right-0 h-1"
                 animate={{ backgroundColor: current.accentColor }}
                 transition={{ duration: 0.8 }}
               />
@@ -546,7 +546,7 @@ export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
 
   const areiasProducts = areiasAssets.map((a, i) => ({ ...a, ...t.areias.products[i] }));
-  const toppersProducts = toppersAssets.map((a, i) => ({ ...a, ...t.toppers.products[i] }));
+  const toppersProducts = toppersAssets.map((a) => ({ ...a, ...t.toppers.products.find((p: any) => p.id === a.id) }));
 
   // useEffect e refs removidos para tirar o produto flutuante
 
@@ -571,7 +571,7 @@ export default function Home() {
           >
             <source src="/videos/video_Site_2.mp4?v=1" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-black/40 lg:bg-gradient-to-r lg:from-[#5bbced] lg:from-0% lg:via-[#5bbced]/10 lg:via-30% lg:to-transparent" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
         <div className="page-container relative z-10 w-full order-2 lg:order-1 flex items-center">
@@ -598,7 +598,7 @@ export default function Home() {
 
               <FadeInSection delay={310} className="mt-12">
                 <div className="flex flex-wrap gap-4">
-                  <Link to="/areias" className="px-8 py-4 bg-[#00b03b] text-white text-[0.85rem] font-bold tracking-[0.15em] uppercase hover:bg-[#009030] transition-all flex items-center gap-2">
+                  <Link to="/areias" className="px-8 py-4 bg-[#A6C84E] text-white text-[0.85rem] font-bold tracking-[0.15em] uppercase hover:bg-[#92b53c] transition-all flex items-center gap-2">
                     {t.hero.ctaPrimary}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -633,7 +633,7 @@ export default function Home() {
       </section>
 
       {/* ══ CATALOG CTA — Brand Green Block ══ */}
-      <section className="py-16 bg-[#00b03b]">
+      <section className="py-16 bg-[#A6C84E]">
         <div className="page-container">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
             <FadeInSection className="max-w-2xl">
@@ -642,7 +642,7 @@ export default function Home() {
               </h2>
             </FadeInSection>
             <FadeInSection delay={100}>
-              <Link to="/catalogo" className="px-10 py-5 bg-white text-[#00b03b] text-[0.9rem] font-black tracking-[0.2em] uppercase hover:bg-white/90 transition-all shadow-xl">
+              <Link to="/catalogo" className="px-10 py-5 bg-white text-[#A6C84E] text-[0.9rem] font-black tracking-[0.2em] uppercase hover:bg-white/90 transition-all shadow-xl">
                 Ver catálogo
               </Link>
             </FadeInSection>
@@ -663,6 +663,19 @@ export default function Home() {
           productAriaPrefix={copy.productAriaPrefix}
         />
       </div>
+      {/* ══ EDITORIAL — Lifestyle areia ══ */}
+      <EditorialSection
+        image="/images/hero-areias.png"
+        imageAlt={copy.editorialTwo.imageAlt}
+        kicker={copy.editorialTwo.kicker}
+        title={copy.editorialTwo.title}
+        titleHighlight={copy.editorialTwo.titleHighlight}
+        body={copy.editorialTwo.body}
+        ctaLabel={copy.editorialTwo.ctaLabel}
+        ctaHref="/areias"
+        flip={false}
+        bg="#5bbced"
+      />
 
       {/* ══ TOPPERS PRODUCT SHOWCASE — Brand Red Block ══ */}
       <section className="bg-[#c42127] text-white overflow-hidden">
@@ -679,7 +692,6 @@ export default function Home() {
         />
       </section>
 
-
       {/* ══ EDITORIAL — Lifestyle woman and dog ══ */}
       <EditorialSection
         image="/images/hero-gato-cachorro.png"
@@ -694,50 +706,15 @@ export default function Home() {
         bg="#5bbced"
       />
 
-      {/* ══ EDITORIAL — Lifestyle areia ══ */}
-      <EditorialSection
-        image="/images/hero-areias.png"
-        imageAlt={copy.editorialTwo.imageAlt}
-        kicker={copy.editorialTwo.kicker}
-        title={copy.editorialTwo.title}
-        titleHighlight={copy.editorialTwo.titleHighlight}
-        body={copy.editorialTwo.body}
-        ctaLabel={copy.editorialTwo.ctaLabel}
-        ctaHref="/areias"
-        flip={false}
-        bg="#5bbced"
-      />
-
       {/* ══ FAQ ══ */}
       <section className="bg-white border-t border-[#e8e8e8]">
         <FAQ items={t.faq.items} kicker={copy.faq.kicker} title={copy.faq.title} subtitle={copy.faq.subtitle} />
       </section>
 
-      {/* ══ PARTNERSHIPS — Brand Blue Block ══ */}
-      <section className="py-16 lg:py-32 bg-[#5bbced] text-white">
-        <div className="page-container">
-          <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-            <FadeInSection>
-              <span className="text-[0.8rem] font-bold tracking-[0.3em] uppercase opacity-80">Parcerias Estratégicas</span>
-              <h2 className="heading-lg !text-white mt-4 uppercase leading-tight">
-                Leve a Amigo Meu para a sua loja
-              </h2>
-              <p className="mt-6 text-[1.1rem] text-white/80 max-w-lg mx-auto leading-relaxed">
-                Oferecemos condições exclusivas para distribuidores e lojistas que buscam produtos de alta performance e apelo sustentável.
-              </p>
-              <div className="mt-10">
-                <Link to="/b2b" className="px-10 py-5 bg-[#00b03b] text-white text-[0.9rem] font-black tracking-[0.2em] uppercase hover:bg-[#009030] transition-all inline-block shadow-lg">
-                  Seja um Parceiro
-                </Link>
-              </div>
-            </FadeInSection>
-          </div>
-        </div>
-      </section>
 
       {/* ══ CTA FINAL ══ */}
       <section className="py-16 lg:py-32 bg-[#174878] relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-2 bg-[#5bbced]" />
+        <div className="absolute bottom-0 left-0 right-0 h-2 bg-[#5bbced]" />
         <div className="page-container text-center text-white relative z-10">
           <FadeInSection>
             <span className="section-kicker !text-[#5bbced] !bg-[#5bbced]/10 !border-[#5bbced]/30 uppercase tracking-[0.2em]">
@@ -752,7 +729,7 @@ export default function Home() {
               Transformando a rotina dos pets com tecnologia sustentável e ingredientes 100% naturais.
             </p>
             <div className="flex flex-wrap justify-center gap-6 mt-14">
-              <Link to="/comprar" className="px-10 py-5 bg-[#00b03b] text-white text-[0.9rem] font-black tracking-[0.2em] uppercase hover:bg-[#009030] transition-all flex items-center gap-3 shadow-xl">
+              <Link to="/comprar" className="px-10 py-5 bg-[#A6C84E] text-white text-[0.9rem] font-black tracking-[0.2em] uppercase hover:bg-[#92b53c] transition-all flex items-center gap-3 shadow-xl">
                 <ShoppingCart className="h-5 w-5" />
                 {t.cta.btnStore}
               </Link>
@@ -769,6 +746,3 @@ export default function Home() {
     </main>
   );
 }
-
-
-

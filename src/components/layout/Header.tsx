@@ -31,8 +31,8 @@ export default function Header() {
   const navItems = [
     { label: t.nav.areias, href: "/areias" },
     { label: t.nav.toppers, href: "/toppers" },
-    { label: copy.catalog, href: "/catalogo" },
     { label: t.nav.sobre, href: "/sobre" },
+    { label: copy.catalog, href: "/catalogo" },
     { label: t.nav.b2b, href: "/b2b" },
   ];
 

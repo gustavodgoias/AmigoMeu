@@ -26,7 +26,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-[#111118] text-white overflow-hidden relative border-t-8 border-[#5bbced]">
+    <footer className="w-full bg-[#5bbced] text-white overflow-hidden relative">
       <div className="py-12 lg:py-12 relative z-10">
         <div className="w-full px-6 lg:px-10 mx-auto max-w-[1400px]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 border-b border-white/10 pb-12 lg:pb-10">
@@ -36,7 +36,7 @@ export default function Footer() {
                 alt="Amigo Meu Pet Feliz"
                 className="h-10 lg:h-14 w-auto brightness-0 invert opacity-100"
               />
-              <p className="max-w-md text-[1rem] leading-relaxed text-white/60 font-light">
+                <p className="max-w-md text-[1rem] leading-relaxed text-white/80 font-light">
                 {t.footer.tagline}
               </p>
 
@@ -61,7 +61,7 @@ export default function Footer() {
             </div>
 
             <div className="hidden lg:block lg:col-span-3 lg:col-start-7 space-y-8">
-              <h4 className="text-[0.75rem] font-bold tracking-[0.15em] text-white/40 uppercase">
+              <h4 className="text-[0.75rem] font-bold tracking-[0.15em] text-white/60 uppercase">
                 {t.footer.explore}
               </h4>
               <ul className="space-y-4 text-[0.95rem] font-medium text-white/70">
@@ -99,7 +99,7 @@ export default function Footer() {
             </div>
 
             <div className="lg:col-span-3 space-y-8">
-              <h4 className="text-[0.75rem] font-bold tracking-[0.15em] text-white/40 uppercase">
+              <h4 className="text-[0.75rem] font-bold tracking-[0.15em] text-white/60 uppercase">
                 {t.footer.support}
               </h4>
               <div className="space-y-4 text-[0.95rem] font-medium text-white/70">
@@ -112,14 +112,14 @@ export default function Footer() {
                   <AtSign strokeWidth={1.5} className="h-5 w-5 opacity-50" />
                   <span>@amigomeu.petfeliz</span>
                 </a>
-                <p className="block pt-4 text-[0.85rem] text-white/40 font-light leading-relaxed">
+                <p className="block pt-4 text-[0.85rem] text-white/60 font-light leading-relaxed">
                   {t.footer.hours}
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col gap-6 pt-8 lg:pt-10 text-[0.85rem] font-medium text-white/40 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-6 pt-8 lg:pt-10 text-[0.85rem] font-medium text-white/70 md:flex-row md:items-center md:justify-between">
             <p>
               © {currentYear} Amigo Meu Pet Feliz. {t.footer.rights}
             </p>

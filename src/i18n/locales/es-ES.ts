@@ -4,7 +4,7 @@ const esES = {
     home: "Inicio",
     areias: "Línea de Gatos",
     toppers: "Línea de Perros",
-    b2b: "Socios B2B",
+    b2b: "B2B",
     buy: "Comprar",
     language: "Idioma",
     sobre: "Sobre Nosotros",

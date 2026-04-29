@@ -4,7 +4,7 @@ const ptBR = {
     home: "Início",
     areias: "Linha para Gatos",
     toppers: "Linha para Cães",
-    b2b: "Parceiros B2B",
+    b2b: "B2B",
     buy: "Comprar",
     language: "Idioma",
     sobre: "Sobre",
@@ -437,7 +437,7 @@ const ptBR = {
       {
         question: "Como posso ser um revendedor ou distribuidor?",
         answer:
-          "Acesse a página 'Parceiros B2B' e preencha o formulário de credenciamento. Nosso time comercial analisará seu perfil e entrará em contato em até 48 horas.",
+          "Acesse a página 'B2B' e preencha o formulário de credenciamento. Nosso time comercial analisará seu perfil e entrará em contato em até 48 horas.",
       },
       {
         question: "Os produtos têm certificação sustentável?",

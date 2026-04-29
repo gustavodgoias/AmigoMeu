@@ -333,7 +333,7 @@ export default function B2B() {
               <source src="/videos/video_Site_2.mp4" type="video/mp4" />
             </video>
           </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#5bbced] from-0% via-[#5bbced]/10 via-30% to-transparent hidden lg:block" />
+
 
 
         </div>
@@ -394,9 +394,9 @@ export default function B2B() {
                   style={{ backgroundColor: track.accent }}
                 >
                   <div className="page-container w-full py-24 lg:py-32">
-                    <div className="grid lg:grid-cols-2 items-center gap-16">
+                    <div className="grid lg:grid-cols-2 items-stretch gap-16">
                       <div
-                        className={`${index % 2 !== 0 ? "lg:order-2" : "lg:order-1"} relative h-[400px] lg:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl`}
+                        className={`${index % 2 !== 0 ? "lg:order-2" : "lg:order-1"} relative min-h-[400px] rounded-none overflow-hidden shadow-2xl`}
                       >
                         <img
                           src={track.image}

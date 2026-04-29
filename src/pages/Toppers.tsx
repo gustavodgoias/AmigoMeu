@@ -15,20 +15,20 @@ type FAQItem = {
 
 const toppersAssets = [
   {
-    id: "frango",
-    image: "/images/produtos/AMIGOMEU-TOPPER-FRANGO-100G.png",
-    accentColor: "#C8A21A",
-    btnBg: "#C8A21A",
-    btnHover: "#a08010",
-    bgTint: "#C8A21A15",
-  },
-  {
     id: "carne",
     image: "/images/produtos/AMIGOMEU-TOPPER-CARNE-100G.png",
     accentColor: "#b53c2f",
     btnBg: "#b53c2f",
     btnHover: "#8f2d23",
     bgTint: "#b53c2f15",
+  },
+  {
+    id: "frango",
+    image: "/images/produtos/AMIGOMEU-TOPPER-FRANGO-100G.png",
+    accentColor: "#C8A21A",
+    btnBg: "#C8A21A",
+    btnHover: "#a08010",
+    bgTint: "#C8A21A15",
   },
   {
     id: "figado",
@@ -260,8 +260,8 @@ export default function Toppers() {
   const { t, locale } = useI18n();
   const [activeProduct, setActiveProduct] = useState(0);
 
-  const toppersProducts = toppersAssets.map((asset, idx) => ({
-    ...t.toppers.products[idx],
+  const toppersProducts = toppersAssets.map((asset) => ({
+    ...t.toppers.products.find((p: any) => p.id === asset.id),
     ...asset,
   }));
 
@@ -392,7 +392,7 @@ export default function Toppers() {
                         style={{ backgroundColor: product.bgTint }}
                       >
                         <div
-                          className="absolute top-0 left-0 w-full h-1"
+                          className="absolute bottom-0 left-0 w-full h-1"
                           style={{ backgroundColor: product.accentColor }}
                         />
                         <img
