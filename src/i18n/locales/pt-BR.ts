@@ -24,8 +24,8 @@ const ptBR = {
     badgePlastic: "Plástico",
     badgeBio: "Degradável",
     stat100: "100%",
-    statZero: "Zero",
-    statBio: "Bio",
+    statZero: "ZERO",
+    statBio: "BIO",
   },
 
   // ─── Valores da Marca ─────────────────────────────────────────────
@@ -194,7 +194,7 @@ const ptBR = {
     seeAll: "Ver Coleção Completa",
     pageTitle: "Toppers Nutricionais para Cães",
     pageSubtitle:
-      "Uma camada extra de sabor e nutrição para o seu melhor amigo. Mandioca + Proteína.",
+      "Transforme a rotina alimentar do seu cão com uma explosão de sabor e vitalidade. Nossos toppers premium são desenvolvidos com ingredientes selecionados, unindo a base energética da mandioca brasileira ao alto valor biológico.",
     features: {
       protein: "Rico em Proteínas",
       proteinDesc: "Ajuda a manter a massa muscular e vitalidade.",

@@ -615,10 +615,10 @@ export default function Home() {
                     { value: t.hero.statBio, label: t.hero.badgeBio },
                   ].map((s, i) => (
                     <div key={i} className="flex flex-col">
-                      <span className="text-[2.8rem] font-black leading-none text-white tracking-tight">
+                      <span className="text-[2.6rem] font-black leading-none text-white tracking-[0.1em]">
                         <CountUp value={s.value} duration={2 + i * 0.5} />
                       </span>
-                      <span className="text-xs text-white/70 uppercase tracking-[0.25em] font-bold mt-3">
+                      <span className="text-[0.6rem] text-white/60 uppercase tracking-[0.6em] font-bold mt-4">
                         {s.label}
                       </span>
                     </div>

@@ -24,8 +24,8 @@ const esES = {
     badgePlastic: "Plástico",
     badgeBio: "Degradable",
     stat100: "100%",
-    statZero: "Zero",
-    statBio: "Bio",
+    statZero: "ZERO",
+    statBio: "BIO",
   },
 
   // ─── Valores de Marca ─────────────────────────────────────────────
@@ -193,7 +193,7 @@ const esES = {
       "Eleve la comida de su perro con nutrición real. Sin colorantes, sin conservantes, solo ingredientes de verdad.",
     pageTitle: "Toppers y Suplementos Naturales",
     pageSubtitle:
-      "Sabor irresistible y salud reforzada en cada comida. La forma más fácil de ofrecer nutrición funcional.",
+      "Transforme la rutina alimentaria de su perro con una explosión de sabor y vitalidad. Nuestros toppers premium son desarrollados con ingredientes seleccionados, uniendo la base energética de la mandioca brasileña al alto valor biológico.",
     features: {
       protein: "Rico en Proteínas",
       proteinDesc: "Ayuda a mantener la masa muscular.",

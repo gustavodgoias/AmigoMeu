@@ -282,7 +282,7 @@ export default function Toppers() {
         style={{ backgroundColor: current.accentColor }}
       >
         {/* Featured Topper (AnimatePresence) — Desktop Only */}
-        <div className="absolute -left-50 top-0 h-full w-[35%] z-10 pointer-events-none hidden lg:flex items-center justify-center">
+        <div className="absolute -left-20 top-0 h-full w-[35%] z-10 pointer-events-none hidden lg:flex items-center justify-center">
           <AnimatePresence>
             <motion.div
               key={activeProduct}
@@ -315,7 +315,7 @@ export default function Toppers() {
 
         <div className="page-container relative z-10 w-full order-2 lg:order-1 flex items-center">
           <div className="grid lg:grid-cols-2 items-center">
-            <div className="py-8 lg:py-32 lg:pr-16">
+            <div className="py-8 lg:py-24 lg:pr-16 max-w-3xl lg:pl-56">
               <FadeInSection delay={50}>
                 <motion.span
                   className="section-kicker !bg-white/10 !text-white !border-white/30 uppercase tracking-[0.2em]"
@@ -323,9 +323,8 @@ export default function Toppers() {
                   {t.nav.toppers}
                 </motion.span>
               </FadeInSection>
-              <br />
-              <FadeInSection delay={130} className="mt-8">
-                <h1 className="heading-xl leading-[0.95] !text-white uppercase tracking-tight">
+              <FadeInSection delay={130} className="mt-10">
+                <h1 className="heading-lg leading-[0.95] !text-white uppercase tracking-tight">
                   {t.toppers.title}
                   <br />
                   <span className="text-white/80">
@@ -333,14 +332,13 @@ export default function Toppers() {
                   </span>
                 </h1>
               </FadeInSection>
-              <br />
-              <FadeInSection delay={210} className="mt-8">
-                <p className="text-[1.25rem] leading-relaxed text-white/90 max-w-md font-light">
+              <FadeInSection delay={210} className="mt-10">
+                <p className="text-[1.2rem] leading-relaxed text-white/90 max-w-md font-light">
                   {t.toppers.pageSubtitle}
                 </p>
               </FadeInSection>
 
-              <FadeInSection delay={290} className="mt-10">
+              <FadeInSection delay={290} className="mt-12">
                 <div className="space-y-4">
                   <p className="text-[0.75rem] font-bold tracking-[0.2em] uppercase text-white/70">
                     {pageCopy.selectFlavor}

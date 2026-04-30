@@ -24,8 +24,8 @@ const enUS = {
     badgePlastic: "Plastic",
     badgeBio: "Degradable",
     stat100: "100%",
-    statZero: "Zero",
-    statBio: "Bio",
+    statZero: "ZERO",
+    statBio: "BIO",
   },
 
   // ─── Brand Values ─────────────────────────────────────────────────
@@ -194,7 +194,7 @@ const enUS = {
     seeAll: "See Full Collection",
     pageTitle: "Nutritional Meal Toppers for Dogs",
     pageSubtitle:
-      "An extra layer of flavor and nutrition for your best friend. Cassava + Protein.",
+      "Transform your dog's feeding routine with a burst of flavor and vitality. Our premium toppers are developed with selected ingredients, joining the energetic base of Brazilian cassava to the high biological value.",
     features: {
       protein: "Rich in Protein",
       proteinDesc: "Helps maintain muscle mass and vitality.",

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Check, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FadeInSection } from "./Home";
 import FAQ from "../components/FAQ";
 import { useI18n } from "../i18n";
@@ -414,10 +414,30 @@ export default function Areias() {
       </Helmet>
 
       {/* Dynamic Hero — Brand Color Block */}
-      <section 
+      <section
         className="relative lg:h-[93dvh] flex flex-col items-stretch overflow-hidden transition-colors duration-700"
         style={{ backgroundColor: current.accentColor }}
       >
+        {/* Featured Product (AnimatePresence) — Desktop Only */}
+        <div className="absolute -left-20 top-0 h-full w-[35%] z-10 pointer-events-none hidden lg:flex items-center justify-center">
+          <AnimatePresence mode="popLayout">
+            <motion.div
+              key={activeProduct}
+              initial={{ y: 80, opacity: 0, scale: 0.95 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              exit={{ y: -80, opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <img
+                src={current.image}
+                alt={current.name}
+                className="w-[85%] h-[85%] object-contain drop-shadow-[0_40px_100px_rgba(0,0,0,0.3)]"
+              />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
         <div className="absolute inset-0 lg:left-auto lg:top-0 lg:right-0 w-full lg:w-1/2 h-full z-0 order-1 lg:order-2">
           <video
             autoPlay
@@ -432,7 +452,7 @@ export default function Areias() {
 
         <div className="page-container relative z-10 w-full order-2 lg:order-1 flex items-center">
           <div className="grid lg:grid-cols-2 items-center">
-            <div className="py-8 lg:py-32 lg:pr-16">
+            <div className="py-8 lg:py-24 lg:pr-16 max-w-2xl lg:pl-72">
               <FadeInSection delay={50}>
                 <motion.span
                   className="section-kicker !bg-white/10 !text-white !border-white/30 uppercase tracking-[0.2em]"
@@ -440,9 +460,8 @@ export default function Areias() {
                   {t.nav.areias}
                 </motion.span>
               </FadeInSection>
-<br />
               <FadeInSection delay={130} className="mt-8">
-                <h1 className="heading-xl leading-[0.95] !text-white uppercase tracking-tight">
+                <h1 className="heading-lg leading-[0.95] !text-white uppercase tracking-tight">
                   {t.areias.title}
                   <br />
                   <span className="text-white/80">
@@ -450,14 +469,13 @@ export default function Areias() {
                   </span>
                 </h1>
               </FadeInSection>
-<br />
-              <FadeInSection delay={210} className="mt-8">
-                <p className="text-[1.25rem] leading-relaxed text-white/90 max-w-md font-light">
+              <FadeInSection delay={210} className="mt-10">
+                <p className="text-[1.2rem] leading-relaxed text-white/90 max-w-md font-light">
                   {t.areias.pageSubtitle}
                 </p>
               </FadeInSection>
 
-              <FadeInSection delay={290} className="mt-10">
+              <FadeInSection delay={290} className="mt-12">
                 <div className="space-y-4">
                   <p className="text-[0.75rem] font-bold tracking-[0.2em] uppercase text-white/70">
                     {pageCopy.selectAroma}
@@ -517,9 +535,8 @@ export default function Areias() {
                 <FadeInSection delay={80}>
                   <div className="grid lg:grid-cols-2 min-h-[500px]">
                     <div
-                      className={`hidden lg:flex relative items-center justify-center p-8 py-16 lg:p-24 ${
-                        idx % 2 !== 0 ? "lg:order-2" : "lg:order-1"
-                      }`}
+                      className={`hidden lg:flex relative items-center justify-center p-8 py-16 lg:p-24 ${idx % 2 !== 0 ? "lg:order-2" : "lg:order-1"
+                        }`}
                       style={{ backgroundColor: product.bgTint }}
                     >
                       <div
@@ -534,9 +551,8 @@ export default function Areias() {
                     </div>
 
                     <div
-                      className={`p-8 py-16 lg:p-24 bg-white flex flex-col justify-center gap-6 ${
-                        idx % 2 !== 0 ? "lg:order-1" : "lg:order-2"
-                      }`}
+                      className={`p-8 py-16 lg:p-24 bg-white flex flex-col justify-center gap-6 ${idx % 2 !== 0 ? "lg:order-1" : "lg:order-2"
+                        }`}
                     >
                       <div
                         className="text-[0.75rem] font-bold tracking-[0.25em] uppercase"
@@ -605,51 +621,50 @@ export default function Areias() {
                 <span>Deslize para comparar</span>
                 <ArrowRight className="h-3 w-3" />
               </div>
-              
+
               <div className="overflow-x-auto border border-[#e8e8e8] rounded-sm">
                 <table className="w-full text-left border-collapse min-w-[700px]">
-                <thead>
-                  <tr className="bg-[#111118] text-white">
-                    <th className="sticky left-0 z-20 bg-[#111118] px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.15em]">
-                      {comparisonHeader.feature}
-                    </th>
-                    <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-[#90C63E]">
-                      {comparisonHeader.amigoMeu}
-                    </th>
-                    <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-[#d6d6d6]">
-                      {comparisonHeader.generica}
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonRows.map((row, idx) => (
-                    <tr
-                      key={row.feature}
-                      className={`border-t border-[#f1f1f1] ${
-                        idx % 2 === 0 ? "bg-white" : "bg-[#fafafa]"
-                      }`}
-                    >
-                      <td className="sticky left-0 z-10 bg-inherit px-6 py-5 text-[0.78rem] font-bold text-[#1a1a1a] uppercase tracking-[0.08em] align-top border-r border-[#f1f1f1]">
-                        {row.feature}
-                      </td>
-                      <td className="px-6 py-5 text-[0.9rem] text-[#2b2b2b] align-top">
-                        <div className="inline-flex items-start gap-2">
-                          <Check className="h-4 w-4 text-[#90C63E] mt-[2px] shrink-0" />
-                          <span>{row.amigoMeu}</span>
-                        </div>
-                      </td>
-                      <td className="px-6 py-5 text-[0.9rem] text-[#666666] align-top">
-                        {row.generica}
-                      </td>
+                  <thead>
+                    <tr className="bg-[#111118] text-white">
+                      <th className="sticky left-0 z-20 bg-[#111118] px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.15em]">
+                        {comparisonHeader.feature}
+                      </th>
+                      <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-[#90C63E]">
+                        {comparisonHeader.amigoMeu}
+                      </th>
+                      <th className="px-6 py-5 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-[#d6d6d6]">
+                        {comparisonHeader.generica}
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {comparisonRows.map((row, idx) => (
+                      <tr
+                        key={row.feature}
+                        className={`border-t border-[#f1f1f1] ${idx % 2 === 0 ? "bg-white" : "bg-[#fafafa]"
+                          }`}
+                      >
+                        <td className="sticky left-0 z-10 bg-inherit px-6 py-5 text-[0.78rem] font-bold text-[#1a1a1a] uppercase tracking-[0.08em] align-top border-r border-[#f1f1f1]">
+                          {row.feature}
+                        </td>
+                        <td className="px-6 py-5 text-[0.9rem] text-[#2b2b2b] align-top">
+                          <div className="inline-flex items-start gap-2">
+                            <Check className="h-4 w-4 text-[#90C63E] mt-[2px] shrink-0" />
+                            <span>{row.amigoMeu}</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-5 text-[0.9rem] text-[#666666] align-top">
+                          {row.generica}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-          <p className="mt-4 text-[0.8rem] text-[#888888] font-medium">{comparisonHeader.note}</p>
-        </FadeInSection>
-      </div>
+            <p className="mt-4 text-[0.8rem] text-[#888888] font-medium">{comparisonHeader.note}</p>
+          </FadeInSection>
+        </div>
       </section>
 
       <section className="border-t border-[#e8e8e8]">
