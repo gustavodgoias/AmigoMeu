@@ -316,6 +316,7 @@ export default function B2B() {
 
       {/* Hero — Brand Blue Block */}
       <section className="relative lg:h-[93dvh] flex flex-col items-stretch overflow-hidden bg-[#5bbced]">
+        <div className="noise-overlay" />
         <div className="hidden lg:block relative lg:absolute top-0 right-0 w-full lg:w-1/2 h-full z-0 order-1 lg:order-2">
           <motion.div
             initial={{ opacity: 0 }}
@@ -390,9 +391,10 @@ export default function B2B() {
             {pageCopy.tracks.map((track, index) => (
               <FadeInSection key={track.id} delay={index * 120} className="w-full">
                 <article
-                  className="overflow-hidden min-h-[600px] flex items-center"
+                  className="relative overflow-hidden min-h-[600px] flex items-center"
                   style={{ backgroundColor: track.accent }}
                 >
+                  <div className="noise-overlay opacity-20" />
                   <div className="page-container w-full py-24 lg:py-32">
                     <div className="grid lg:grid-cols-2 items-stretch gap-16">
                       <div

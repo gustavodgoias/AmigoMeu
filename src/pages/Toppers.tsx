@@ -281,6 +281,7 @@ export default function Toppers() {
         className="relative lg:h-[93dvh] flex flex-col items-stretch overflow-hidden transition-colors duration-700"
         style={{ backgroundColor: current.accentColor }}
       >
+        <div className="noise-overlay" />
         {/* Featured Topper (AnimatePresence) — Desktop Only */}
         <div className="absolute -left-20 top-0 h-full w-[35%] z-10 pointer-events-none hidden lg:flex items-center justify-center">
           <AnimatePresence>
@@ -407,6 +408,7 @@ export default function Toppers() {
                           }`}
                         style={{ backgroundColor: product.bgTint }}
                       >
+                        <div className="noise-overlay" />
                         <div
                           className="absolute bottom-0 left-0 w-full h-1"
                           style={{ backgroundColor: product.accentColor }}

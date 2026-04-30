@@ -344,6 +344,7 @@ export default function Sobre() {
 
       {/* Hero — Immersive Video Background */}
       <section className="relative py-32 bg-[#5bbced] text-white h-[93dvh] flex items-center overflow-hidden">
+        <div className="noise-overlay" />
         {/* Background Video — subtle texture */}
         <div className="absolute inset-0 z-0">
           <video
@@ -387,7 +388,8 @@ export default function Sobre() {
       {/* Mission & Vision — Saturated Blocks */}
       <section className="py-0">
         <FadeInSection>
-          <article className="grid lg:grid-cols-2 bg-[#90C63E] text-white overflow-hidden min-h-[600px] items-center">
+          <article className="relative grid lg:grid-cols-2 bg-[#90C63E] text-white overflow-hidden min-h-[600px] items-center">
+            <div className="noise-overlay opacity-20" />
             <div className="hidden lg:block relative h-full order-1 lg:order-2">
               <img
                 src="/images/hero-gato-cachorro.png"
@@ -417,7 +419,8 @@ export default function Sobre() {
         </FadeInSection>
 
         <FadeInSection>
-          <article className="grid lg:grid-cols-2 bg-[#1a3a5a] text-white overflow-hidden min-h-[600px] items-center">
+          <article className="relative grid lg:grid-cols-2 bg-[#1a3a5a] text-white overflow-hidden min-h-[600px] items-center">
+            <div className="noise-overlay opacity-20" />
             <div className="hidden lg:block relative h-full">
               <img
                 src="/images/hero-areias.png"
@@ -531,6 +534,7 @@ export default function Sobre() {
       </section>
 
       <section className="py-24 bg-[#111118] text-white overflow-hidden relative">
+        <div className="noise-overlay opacity-30" />
         <div className="absolute top-0 right-0 w-full h-full bg-primary-500/5 pointer-events-none" />
         <div className="page-container max-w-4xl text-center relative z-10">
           <FadeInSection>

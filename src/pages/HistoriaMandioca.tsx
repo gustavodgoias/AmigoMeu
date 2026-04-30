@@ -133,7 +133,8 @@ export default function HistoriaMandioca() {
         <meta name="description" content={copy.pageDescription} />
       </Helmet>
 
-      <section className="relative h-[93dvh] flex items-center bg-transparent overflow-hidden pt-20">
+      <section className="relative h-[93dvh] flex items-center bg-white overflow-hidden pt-20">
+        <div className="noise-overlay opacity-10" />
         <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-primary-500/5 rounded-full blur-[120px] pointer-events-none" />
         <div className="page-container max-w-5xl text-left relative z-10">
           <FadeInSection>
@@ -153,7 +154,8 @@ export default function HistoriaMandioca() {
         </div>
       </section>
 
-      <section className="py-32 bg-[#f2f8ff] border-y border-[#e8e8e8]">
+      <section className="relative py-32 bg-[#f2f8ff] border-y border-[#e8e8e8] overflow-hidden">
+        <div className="noise-overlay opacity-20" />
         <div className="page-container max-w-4xl">
           <div className="space-y-16">
             {copy.steps.map((step, index) => {

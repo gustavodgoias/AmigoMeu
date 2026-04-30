@@ -327,6 +327,7 @@ function ProductShowcase({
               className="relative flex items-center justify-center h-[360px] lg:h-[500px] border border-[#e8e8e8] overflow-hidden transition-colors duration-700"
               style={{ background: `${current.accentColor}15` }}
             >
+              <div className="noise-overlay" />
               {/* Color stripe top — matches current product */}
               <motion.div
                 className="absolute bottom-0 left-0 right-0 h-1"
@@ -490,6 +491,7 @@ function EditorialSection({
 }) {
   return (
     <section className={`border-t border-[#e8e8e8] relative overflow-hidden`} style={{ backgroundColor: bg }}>
+      <div className="noise-overlay" />
       <div className={`flex flex-col lg:flex-row min-h-[400px] lg:min-h-[600px] ${flip ? "lg:flex-row-reverse" : ""}`}>
         {/* Content Side */}
         <div className="w-full lg:w-1/2 flex items-center py-16 lg:py-32 px-8 lg:px-24 xl:px-40">
@@ -559,6 +561,7 @@ export default function Home() {
 
       {/* ══ HERO — Brand Blue Block ══ */}
       <section ref={heroRef} className="relative lg:h-[93dvh] flex flex-col items-stretch overflow-hidden bg-[#5bbced]">
+        <div className="noise-overlay" />
         {/* Full-bleed image panel (Right side) */}
         <div className="absolute inset-0 lg:left-auto lg:top-0 lg:right-0 w-full lg:w-1/2 h-full z-0 order-1 lg:order-2">
           <video
@@ -713,6 +716,7 @@ export default function Home() {
 
       {/* ══ CTA FINAL ══ */}
       <section className="py-16 lg:py-32 bg-[#174878] relative overflow-hidden">
+        <div className="noise-overlay" />
         <div className="absolute bottom-0 left-0 right-0 h-2 bg-[#5bbced]" />
         <div className="page-container text-center text-white relative z-10">
           <FadeInSection>
