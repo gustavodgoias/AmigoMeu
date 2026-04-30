@@ -328,7 +328,7 @@ export default function B2B() {
               loop
               muted
               playsInline
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center opacity-100"
             >
               <source src="/videos/video_Site_2.mp4" type="video/mp4" />
             </video>

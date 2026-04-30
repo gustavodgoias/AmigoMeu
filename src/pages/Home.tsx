@@ -567,11 +567,10 @@ export default function Home() {
             muted
             playsInline
             preload="auto"
-            className="w-full h-full object-cover object-center opacity-30 lg:opacity-100"
+            className="w-full h-full object-cover object-center opacity-100"
           >
             <source src="/videos/video_Site_2.mp4?v=1" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-black/40" />
         </div>
 
         <div className="page-container relative z-10 w-full order-2 lg:order-1 flex items-center">
