@@ -491,7 +491,7 @@ function EditorialSection({
 }) {
   return (
     <section className={`border-t border-[#e8e8e8] relative overflow-hidden`} style={{ backgroundColor: bg }}>
-      <div className="noise-overlay" />
+      <div className={`noise-overlay w-full lg:w-1/2 absolute top-0 h-full ${flip ? "right-0" : "left-0"}`} />
       <div className={`flex flex-col lg:flex-row min-h-[400px] lg:min-h-[600px] ${flip ? "lg:flex-row-reverse" : ""}`}>
         {/* Content Side */}
         <div className="w-full lg:w-1/2 flex items-center py-16 lg:py-32 px-8 lg:px-24 xl:px-40">
@@ -561,7 +561,7 @@ export default function Home() {
 
       {/* ══ HERO — Brand Blue Block ══ */}
       <section ref={heroRef} className="relative lg:h-[93dvh] flex flex-col items-stretch overflow-hidden bg-[#5bbced]">
-        <div className="noise-overlay" />
+        <div className="noise-overlay w-full lg:w-1/2" />
         {/* Full-bleed image panel (Right side) */}
         <div className="absolute inset-0 lg:left-auto lg:top-0 lg:right-0 w-full lg:w-1/2 h-full z-0 order-1 lg:order-2">
           <video

@@ -173,7 +173,6 @@ export default function Catalogo() {
 
       {/* Hero — Immersive Video Background */}
       <section className="relative h-[80dvh] lg:h-[93dvh] flex items-center bg-[#5bbced] text-white pt-[73px] lg:pt-0 overflow-hidden">
-        <div className="noise-overlay" />
         {/* Background Video — very subtle texture */}
         <div className="absolute inset-0 z-0">
           <video
@@ -277,7 +276,6 @@ export default function Catalogo() {
       </section>
 
       <section className="relative py-16 lg:py-32 bg-[#111118] text-white overflow-hidden">
-        <div className="noise-overlay opacity-30" />
         <div className="page-container text-center">
           <FadeInSection>
             <h2 className="heading-lg !text-white">
