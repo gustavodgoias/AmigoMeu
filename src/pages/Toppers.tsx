@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FadeInSection } from "./Home";
 import FAQ from "../components/FAQ";
 import { useI18n } from "../i18n";
@@ -277,11 +277,30 @@ export default function Toppers() {
         <meta name="description" content={t.toppers.pageSubtitle} />
       </Helmet>
 
-      {/* Dynamic Hero — Brand Color Block */}
       <section
         className="relative lg:h-[93dvh] flex flex-col items-stretch overflow-hidden transition-colors duration-700"
         style={{ backgroundColor: current.accentColor }}
       >
+        {/* Featured Topper (AnimatePresence) — Desktop Only */}
+        <div className="absolute -left-50 top-0 h-full w-[35%] z-10 pointer-events-none hidden lg:flex items-center justify-center">
+          <AnimatePresence>
+            <motion.div
+              key={activeProduct}
+              initial={{ y: 80, opacity: 0, scale: 0.95 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              exit={{ y: -80, opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <img
+                src={current.image}
+                alt={current.name}
+                className="w-[85%] h-[85%] object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.3)]"
+              />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
         <div className="absolute inset-0 lg:left-auto lg:top-0 lg:right-0 w-full lg:w-1/2 h-full z-0 order-1 lg:order-2">
           <video
             autoPlay
