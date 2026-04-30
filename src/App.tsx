@@ -3,6 +3,7 @@ import { HelmetProvider, Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
 import { motion, useSpring, useMotionValue } from "framer-motion";
 
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 
@@ -164,6 +165,7 @@ export default function App() {
         </Helmet>
         <ScrollToTop />
         <CustomCursor />
+        <SpeedInsights />
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">
