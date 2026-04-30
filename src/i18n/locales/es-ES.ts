@@ -266,7 +266,7 @@ const esES = {
     titleHighlight: "Amigo Meu.",
     subtitle: "Solución Full Service.",
     description:
-      "Lleve la sofisticación y los beneficios de una línea de productos súper premium a la vitrina de su negocio. Diseñado para distribuidores y redes pet de alto nivel.",
+      "Infraestructura logística preparada para operaciones globales con agilidad y soporte técnico especializado. Ofrecemos soluciones completas en Marca Propia y Distribución, uniendo nuestra biotecnología exclusiva de mandioca brasileña a procesos productivos de alto desempeño.",
     ctaDistributor: "Solicitar Propuesta",
     ctaContact: "Hablar con un Especialista",
     contacts: {

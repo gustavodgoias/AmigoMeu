@@ -277,7 +277,7 @@ const enUS = {
     titleHighlight: "Our Technology",
     subtitle: "Full Service Solution.",
     description:
-      "Logistics infrastructure prepared for global operations with agility and specialized technical support.",
+      "Logistics infrastructure prepared for global operations with agility and specialized technical support. We offer complete solutions in Private Label and Distribution, joining our exclusive Brazilian cassava biotechnology to high-performance production processes.",
     ctaDistributor: "Become an Authorized Distributor",
     ctaContact: "Contact a Private Label Specialist",
     advantages: {

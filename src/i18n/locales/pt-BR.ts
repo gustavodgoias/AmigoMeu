@@ -277,7 +277,7 @@ const ptBR = {
     titleHighlight: "Nossa Tecnologia",
     subtitle: "Solução Full Service.",
     description:
-      "Infraestrutura logística preparada para operações globais com agilidade e suporte técnico especializado.",
+      "Infraestrutura logística preparada para operações globais com agilidade e suporte técnico especializado. Oferecemos soluções completas em Private Label e Distribuição, unindo nossa biotecnologia exclusiva de mandioca brasileira a processos produtivos de alta performance.",
     ctaDistributor: "Seja um Distribuidor Autorizado",
     ctaContact: "Fale com um Especialista em Marca Própria",
     advantages: {
