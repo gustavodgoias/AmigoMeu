@@ -547,7 +547,10 @@ export default function Home() {
   const copy = homeCopyByLocale[locale];
   const heroRef = useRef<HTMLDivElement>(null);
 
-  const areiasProducts = areiasAssets.map((a, i) => ({ ...a, ...t.areias.products[i] }));
+  const areiasProducts = areiasAssets.map((a) => {
+    const translation = t.areias.products.find((p: any) => p.id === a.id);
+    return { ...a, ...translation };
+  });
   const toppersProducts = toppersAssets.map((a) => ({ ...a, ...t.toppers.products.find((p: any) => p.id === a.id) }));
 
   // useEffect e refs removidos para tirar o produto flutuante
