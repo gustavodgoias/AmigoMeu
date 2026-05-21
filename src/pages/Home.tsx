@@ -109,22 +109,6 @@ const areiasAssets = [
     btnHover: "#d65a10",
   },
   {
-    id: "tradicional-4kg",
-    image: "/images/produtos/AMIGO-MEU-4KG-TRADICIONAL.png",
-    accentColor: "#F37021",
-    accentLight: "#ff8c42",
-    btnBg: "#F37021",
-    btnHover: "#d65a10",
-  },
-  {
-    id: "tradicional-20kg",
-    image: "/images/produtos/AMIGO-MEU-20KG-2026.png",
-    accentColor: "#F37021",
-    accentLight: "#ff8c42",
-    btnBg: "#F37021",
-    btnHover: "#d65a10",
-  },
-  {
     id: "capim-limao",
     image: "/images/produtos/AMIGO-MEU-2KG-2025-CAPIM-LIMAO.png",
     accentColor: "#90C63E",
