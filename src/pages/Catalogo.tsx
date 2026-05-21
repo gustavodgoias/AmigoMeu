@@ -28,6 +28,20 @@ const areiasAssets: CatalogAsset[] = [
     link: "/areias",
   },
   {
+    id: "tradicional-4kg",
+    image: "/images/produtos/AMIGO-MEU-4KG-TRADICIONAL.png",
+    category: "areias",
+    color: "#F37021",
+    link: "/areias",
+  },
+  {
+    id: "tradicional-20kg",
+    image: "/images/produtos/AMIGO-MEU-20KG-2026.png",
+    category: "areias",
+    color: "#F37021",
+    link: "/areias",
+  },
+  {
     id: "capim-limao",
     image: "/images/produtos/AMIGO-MEU-2KG-2025-CAPIM-LIMAO.png",
     category: "areias",

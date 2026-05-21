@@ -121,6 +121,32 @@ const ptBR = {
         ],
       },
       {
+        id: "tradicional-4kg",
+        name: "Tradicional 4kg",
+        subtitle: "A pureza da mandioca para o seu gato (4kg)",
+        description:
+          "Nossa fórmula clássica super premium à base de mandioca para um ambiente livre de odores e torrões firmes (Pacote 4kg).",
+        badges: [
+          "100% Mandioca Pura",
+          "Torrões Ultra-Firmes",
+          "Zero Poeira (99.9%)",
+          "Cor Clara: Monitoramento de Saúde"
+        ],
+      },
+      {
+        id: "tradicional-20kg",
+        name: "Tradicional 20kg",
+        subtitle: "A pureza da mandioca para o seu gato (20kg)",
+        description:
+          "Nossa fórmula clássica super premium à base de mandioca para um ambiente livre de odores e torrões firmes (Saco 20kg).",
+        badges: [
+          "100% Mandioca Pura",
+          "Torrões Ultra-Firmes",
+          "Zero Poeira (99.9%)",
+          "Cor Clara: Monitoramento de Saúde"
+        ],
+      },
+      {
         id: "capim-limao",
         name: "Capim-Limão",
         subtitle: "Frescor natural e controle cítrico",
