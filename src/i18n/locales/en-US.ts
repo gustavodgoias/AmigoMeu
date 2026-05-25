@@ -121,6 +121,32 @@ const enUS = {
         ],
       },
       {
+        id: "tradicional-4kg",
+        name: "Original 4kg",
+        subtitle: "The purity of cassava for your cat (4kg)",
+        description:
+          "Our classic super-premium cassava-based formula for an odor-free environment with firm clumps (4kg package).",
+        badges: [
+          "100% Pure Cassava",
+          "Ultra-Firm Clumps",
+          "Zero Dust (99.9%)",
+          "Light Color: Health Monitoring"
+        ],
+      },
+      {
+        id: "tradicional-20kg",
+        name: "Original 20kg",
+        subtitle: "The purity of cassava for your cat (20kg)",
+        description:
+          "Our classic super-premium cassava-based formula for an odor-free environment with firm clumps (20kg bag).",
+        badges: [
+          "100% Pure Cassava",
+          "Ultra-Firm Clumps",
+          "Zero Dust (99.9%)",
+          "Light Color: Health Monitoring"
+        ],
+      },
+      {
         id: "capim-limao",
         name: "Lemongrass",
         subtitle: "Natural freshness and citrus control",

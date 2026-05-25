@@ -398,10 +398,13 @@ export default function Areias() {
   const { t, locale } = useI18n();
   const [activeProduct, setActiveProduct] = useState(0);
 
-  const areiasProducts = areiasAssets.map((asset, idx) => ({
-    ...t.areias.products[idx],
-    ...asset,
-  }));
+  const areiasProducts = areiasAssets.map((asset) => {
+    const translation = t.areias.products.find((p: any) => p.id === asset.id);
+    return {
+      ...translation,
+      ...asset,
+    };
+  });
 
   const current = areiasProducts[activeProduct];
   const comparisonRows = areiasComparisonByLocale[locale];
