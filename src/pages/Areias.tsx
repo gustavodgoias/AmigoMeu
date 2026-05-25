@@ -28,7 +28,7 @@ const areiasAssets = [
     btnHover: "#d65a10",
     bgTint: "#F3702115",
     buyLink2kg: "https://www.mercadolivre.com.br/areia-higienica-gatos-biodegradavel-tradicional-2kg/up/MLBU3123720247?pdp_filters=item_id:MLB5352430650",
-    buyLink4kg: "https://www.mercadolivre.com.br/areia-higienica-gatos-biodegradavel-tradicional-4kg/up/MLBU3129177274?pdp_filters=item_id:MLB5352432562",
+    buyLink4kg: "https://www.mercadolivre.com.br/areia-higienica-gatos-biodegradavel-tradicional-2kg/up/MLBU3123720247?pdp_filters=item_id:MLB5352430650",
   },
   {
     id: "capim-limao",
@@ -37,7 +37,7 @@ const areiasAssets = [
     btnBg: "#90C63E",
     btnHover: "#76a432",
     bgTint: "#90C63E15",
-    buyLink2kg: "https://produto.mercadolivre.com.br/MLB-5352420074-areia-orgnica-biodegradavel-amigo-meu-capim-limo-2kg-_JM",
+    buyLink2kg: "https://www.mercadolivre.com.br/areia-organica-biodegradavel-amigo-meu-capim-limao-2kg/up/MLBU3123737651?pdp_filters=item_id:MLB5352420074",
   },
   {
     id: "lavanda",
@@ -509,13 +509,15 @@ export default function Areias() {
 
               <FadeInSection delay={370} className="mt-12">
                 <div className="flex flex-wrap gap-4">
-                  <Link
-                    to="/comprar"
+                  <a
+                    href={current.buyLink2kg}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="px-8 py-4 bg-white text-[#1a1a1a] text-[0.85rem] font-black tracking-[0.15em] uppercase hover:bg-white/90 transition-all flex items-center gap-2 shadow-xl"
                   >
                     {t.nav.buy}
                     <ArrowRight className="h-4 w-4" />
-                  </Link>
+                  </a>
                   <Link to="/b2b" className="px-8 py-4 border-2 border-white/40 text-white text-[0.85rem] font-bold tracking-[0.15em] uppercase hover:bg-white/10 transition-all">
                     {t.nav.b2b}
                   </Link>
