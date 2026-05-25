@@ -10,6 +10,7 @@ type CatalogAsset = {
   image: string;
   color: string;
   link: string;
+  buyLink?: string;
   category: "areias" | "toppers";
 };
 
@@ -26,6 +27,7 @@ const areiasAssets: CatalogAsset[] = [
     category: "areias",
     color: "#F37021",
     link: "/areias",
+    buyLink: "https://www.mercadolivre.com.br/areia-higienica-gatos-biodegradavel-tradicional-2kg/up/MLBU3123720247?pdp_filters=item_id:MLB5352430650",
   },
   {
     id: "capim-limao",
@@ -33,6 +35,7 @@ const areiasAssets: CatalogAsset[] = [
     category: "areias",
     color: "#90C63E",
     link: "/areias",
+    buyLink: "https://produto.mercadolivre.com.br/MLB-5352420074-areia-orgnica-biodegradavel-amigo-meu-capim-limo-2kg-_JM",
   },
   {
     id: "lavanda",
@@ -40,6 +43,7 @@ const areiasAssets: CatalogAsset[] = [
     category: "areias",
     color: "#4aa8d8",
     link: "/areias",
+    buyLink: "https://www.mercadolivre.com.br/areia-organica-biodegradavel-amigo-meu-lavanda-2kg/up/MLBU3123733291",
   },
 ];
 
@@ -258,14 +262,27 @@ export default function Catalogo() {
                         {copy.detailsButton}
                         <ArrowRight className="h-4 w-4" />
                       </Link>
-                      <Link
-                        to="/comprar"
-                        className="inline-flex items-center justify-center gap-3 w-full px-8 py-4 text-white text-[0.8rem] font-black uppercase tracking-widest transition-all hover:brightness-110 shadow-lg"
-                        style={{ backgroundColor: product.color }}
-                      >
-                        <ShoppingCart className="h-5 w-5" />
-                        {copy.buyButton}
-                      </Link>
+                      {product.buyLink ? (
+                        <a
+                          href={product.buyLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center gap-3 w-full px-8 py-4 text-white text-[0.8rem] font-black uppercase tracking-widest transition-all hover:brightness-110 shadow-lg"
+                          style={{ backgroundColor: product.color }}
+                        >
+                          <ShoppingCart className="h-5 w-5" />
+                          {copy.buyButton}
+                        </a>
+                      ) : (
+                        <Link
+                          to="/comprar"
+                          className="inline-flex items-center justify-center gap-3 w-full px-8 py-4 text-white text-[0.8rem] font-black uppercase tracking-widest transition-all hover:brightness-110 shadow-lg"
+                          style={{ backgroundColor: product.color }}
+                        >
+                          <ShoppingCart className="h-5 w-5" />
+                          {copy.buyButton}
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </div>

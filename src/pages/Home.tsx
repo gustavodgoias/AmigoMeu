@@ -574,6 +574,10 @@ export default function Home() {
           >
             <source src="/videos/video_Site_2.mp4?v=1" type="video/mp4" />
           </video>
+          {/* Mobile-only colored overlays like Catalogo */}
+          <div className="absolute inset-0 bg-[#5bbced]/80 lg:hidden" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#5bbced] via-transparent to-transparent lg:hidden" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#5bbced] via-transparent to-transparent opacity-95 lg:hidden" />
         </div>
 
         <div className="page-container relative z-10 w-full order-2 lg:order-1 flex items-center">
