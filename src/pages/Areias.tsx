@@ -28,7 +28,7 @@ const areiasAssets = [
     btnHover: "#d65a10",
     bgTint: "#F3702115",
     buyLink2kg: "https://www.mercadolivre.com.br/areia-higienica-gatos-biodegradavel-tradicional-2kg/up/MLBU3123720247?pdp_filters=item_id:MLB5352430650",
-    buyLink4kg: "https://www.mercadolivre.com.br/areia-higienica-gatos-biodegradavel-tradicional-2kg/up/MLBU3123720247?pdp_filters=item_id:MLB5352430650",
+    buyLink4kg: "https://www.mercadolivre.com.br/areia-higienica-gatos-biodegradavel-tradicional-4kg/up/MLBU3129177274?pdp_filters=item_id:MLB5352432562",
   },
   {
     id: "capim-limao",
