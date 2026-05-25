@@ -35,6 +35,7 @@ const areiasAssets: CatalogAsset[] = [
     category: "areias",
     color: "#F37021",
     link: "/areias",
+    buyLink: "https://www.mercadolivre.com.br/areia-higienica-gatos-biodegradavel-tradicional-4kg/up/MLBU3129177274?pdp_filters=item_id:MLB5352432562",
   },
   {
     id: "tradicional-20kg",
