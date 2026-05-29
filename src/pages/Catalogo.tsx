@@ -50,7 +50,7 @@ const areiasAssets: CatalogAsset[] = [
     category: "areias",
     color: "#90C63E",
     link: "/areias",
-    buyLink: "https://produto.mercadolivre.com.br/MLB-5352420074-areia-orgnica-biodegradavel-amigo-meu-capim-limo-2kg-_JM",
+    buyLink: "https://www.mercadolivre.com.br/areia-organica-biodegradavel-amigo-meu-capim-limao-2kg/up/MLBU3123737651?pdp_filters=item_id:MLB5352420074",
   },
   {
     id: "lavanda",
