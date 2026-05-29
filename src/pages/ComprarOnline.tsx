@@ -145,8 +145,8 @@ export default function ComprarOnline() {
 
               return (
                 <FadeInSection key={channel.name} delay={i * 100} className="h-full">
-                  <div className="flex flex-col items-center text-center p-12 bg-white border-4 border-white shadow-xl h-full rounded-[2rem]">
-                    <div className="h-20 w-20 bg-[#f0f0f0] flex items-center justify-center mb-10 text-[#1a1a1a] transition-all duration-500">
+                  <div className="flex flex-col items-center text-center p-12 bg-white border-4 border-white shadow-xl h-full rounded-[2rem] transition-all duration-700 hover:-translate-y-3 hover:shadow-2xl group">
+                    <div className="h-20 w-20 bg-[#f0f0f0] flex items-center justify-center mb-10 text-[#1a1a1a] transition-all duration-500 group-hover:bg-[#5bbced] group-hover:text-white">
                       <channel.icon strokeWidth={1.5} className="h-10 w-10" />
                     </div>
                     <h3 className="text-[0.9rem] font-black uppercase tracking-[0.2em] mb-6 text-[#1a1a1a]">
@@ -157,70 +157,76 @@ export default function ComprarOnline() {
                     </p>
 
                     {/* Selector Area */}
-                    <div className="w-full flex flex-col gap-6 flex-grow items-center justify-center border-t border-b border-gray-100 py-6 mb-8">
+                    <div className="w-full flex flex-col gap-6 flex-grow items-center justify-center bg-gray-50/50 rounded-2xl border border-gray-100 p-6 mb-8 transition-all hover:bg-gray-50 hover:border-gray-200">
                       {/* Aroma Selector */}
-                      <div className="w-full flex flex-col gap-2.5">
-                        <span className="text-[0.7rem] font-black uppercase tracking-wider text-gray-400">
+                      <div className="w-full flex flex-col gap-3">
+                        <span className="text-[0.75rem] font-black uppercase tracking-widest text-[#1a1a1a]">
                           {copyML.aromaTitle}
                         </span>
-                        <div className="flex gap-2 justify-center">
-                          {(["tradicional", "capim-limao", "lavanda"] as const).map((aroma) => (
-                            <button
-                              key={aroma}
-                              onClick={() => {
-                                setSelectedAroma(aroma);
-                                if (aroma !== "tradicional") {
-                                  setSelectedSize("2kg");
-                                }
-                              }}
-                              className="px-4 py-2 border-2 text-[0.72rem] font-bold uppercase tracking-wider transition-all cursor-pointer rounded-lg"
-                              style={{
-                                borderColor: selectedAroma === aroma ? "#5bbced" : "#e8e8e8",
-                                backgroundColor: selectedAroma === aroma ? "#5bbced10" : "transparent",
-                                color: selectedAroma === aroma ? "#5bbced" : "#1a1a1a",
-                              }}
-                            >
-                              {copyML[aroma]}
-                            </button>
-                          ))}
+                        <div className="flex flex-wrap gap-2 justify-center">
+                          {(["tradicional", "capim-limao", "lavanda"] as const).map((aroma) => {
+                            const isSelected = selectedAroma === aroma;
+                            return (
+                              <button
+                                key={aroma}
+                                onClick={() => {
+                                  setSelectedAroma(aroma);
+                                  if (aroma !== "tradicional") {
+                                    setSelectedSize("2kg");
+                                  }
+                                }}
+                                className={`px-3 py-2.5 text-[0.7rem] font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer rounded-xl border-2 flex-1 min-w-[100px] ${
+                                  isSelected
+                                    ? "border-[#5bbced] bg-[#5bbced]/10 text-[#5bbced] shadow-sm"
+                                    : "border-gray-200 bg-white text-gray-500 hover:border-[#5bbced]/40 hover:text-[#5bbced] hover:bg-gray-50 hover:shadow-sm"
+                                }`}
+                              >
+                                {copyML[aroma]}
+                              </button>
+                            );
+                          })}
                         </div>
                       </div>
 
                       {/* Size Selector */}
-                      {selectedAroma === "tradicional" && (
-                        <div className="w-full flex flex-col gap-2.5">
-                          <span className="text-[0.7rem] font-black uppercase tracking-wider text-gray-400">
-                            {copyML.sizeTitle}
-                          </span>
-                          <div className="flex gap-2 justify-center">
-                            {(["2kg", "4kg"] as const).map((size) => (
+                      <div 
+                        className={`w-full flex flex-col gap-3 transition-all duration-500 ease-in-out overflow-hidden ${
+                          selectedAroma === "tradicional" ? 'max-h-40 opacity-100 mt-2' : 'max-h-0 opacity-0 m-0 p-0'
+                        }`}
+                      >
+                        <span className="text-[0.75rem] font-black uppercase tracking-widest text-[#1a1a1a]">
+                          {copyML.sizeTitle}
+                        </span>
+                        <div className="flex gap-2 justify-center">
+                          {(["2kg", "4kg"] as const).map((size) => {
+                            const isSelected = selectedSize === size;
+                            return (
                               <button
                                 key={size}
                                 onClick={() => setSelectedSize(size)}
-                                className="px-5 py-2 border-2 text-[0.72rem] font-bold uppercase tracking-wider transition-all cursor-pointer rounded-lg"
-                                style={{
-                                  borderColor: selectedSize === size ? "#5bbced" : "#e8e8e8",
-                                  backgroundColor: selectedSize === size ? "#5bbced10" : "transparent",
-                                  color: selectedSize === size ? "#5bbced" : "#1a1a1a",
-                                }}
+                                className={`px-6 py-2.5 text-[0.75rem] font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer rounded-xl border-2 flex-1 ${
+                                  isSelected
+                                    ? "border-[#5bbced] bg-[#5bbced]/10 text-[#5bbced] shadow-sm"
+                                    : "border-gray-200 bg-white text-gray-500 hover:border-[#5bbced]/40 hover:text-[#5bbced] hover:bg-gray-50 hover:shadow-sm"
+                                }`}
                               >
                                 {size}
                               </button>
-                            ))}
-                          </div>
+                            );
+                          })}
                         </div>
-                      )}
+                      </div>
                     </div>
 
                     <a
                       href={currentMLLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-between px-8 py-5 text-white text-[0.8rem] font-black uppercase tracking-widest transition-all shadow-lg hover:shadow-xl hover:translate-y-[-2px] duration-300 rounded-xl"
+                      className="w-full inline-flex items-center justify-between px-8 py-5 text-white text-[0.8rem] font-black uppercase tracking-widest transition-all shadow-lg hover:shadow-[#5bbced]/30 hover:shadow-2xl hover:translate-y-[-2px] duration-300 rounded-xl group/btn"
                       style={{ backgroundColor: "#5bbced" }}
                     >
                       <span>{copyML.btnLabel}</span>
-                      <ArrowRight className="h-4 w-4" />
+                      <ArrowRight className="h-4 w-4 transform transition-transform group-hover/btn:translate-x-1" />
                     </a>
                   </div>
                 </FadeInSection>
