@@ -123,7 +123,7 @@ export default function ComprarOnline() {
                       rel="noopener noreferrer"
                       className="flex flex-col items-center text-center p-12 bg-white border-4 border-white shadow-xl h-full transition-all duration-700 hover:-translate-y-3 hover:shadow-2xl group rounded-[2rem]"
                     >
-                      <div className="h-20 w-20 bg-white border border-gray-100 shadow-sm flex items-center justify-center mb-10 transition-all duration-500 rounded-2xl group-hover:shadow-md">
+                      <div className="h-20 w-20 bg-[#f0f0f0] flex items-center justify-center mb-10 transition-all duration-500 rounded-2xl group-hover:shadow-md">
                         <img src={channel.icon} alt={channel.name} className="h-10 w-10 object-contain drop-shadow-sm transition-all duration-300 group-hover:scale-110" />
                       </div>
                       <h3 className="text-[0.9rem] font-black uppercase tracking-[0.2em] mb-6 text-[#1a1a1a]">
@@ -145,7 +145,7 @@ export default function ComprarOnline() {
               return (
                 <FadeInSection key={channel.name} delay={i * 100} className="h-full">
                   <div className="flex flex-col items-center text-center p-12 bg-white border-4 border-white shadow-xl h-full rounded-[2rem] transition-all duration-700 hover:-translate-y-3 hover:shadow-2xl group">
-                    <div className="h-20 w-20 bg-white border border-gray-100 shadow-sm flex items-center justify-center mb-10 transition-all duration-500 rounded-2xl group-hover:shadow-md">
+                    <div className="h-20 w-20 bg-[#f0f0f0] flex items-center justify-center mb-10 transition-all duration-500 rounded-2xl group-hover:shadow-md">
                       <img src={channel.icon} alt={channel.name} className="h-10 w-10 object-contain drop-shadow-sm transition-all duration-300 group-hover:scale-110" />
                     </div>
                     <h3 className="text-[0.9rem] font-black uppercase tracking-[0.2em] mb-6 text-[#1a1a1a]">
