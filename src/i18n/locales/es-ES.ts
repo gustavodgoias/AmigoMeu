@@ -392,9 +392,9 @@ const esES = {
           "Hable directamente con nuestro equipo y realice su pedido rápidamente por WhatsApp.",
       },
       {
-        name: "Instagram @amigomeu.petfeliz",
+        name: "Mercado Livre",
         description:
-          "Siga las novedades y realice pedidos directamente por el mensaje directo de nuestra línea oficial.",
+          "Adquiera nuestra línea completa de arenas biodegradables y toppers premium directamente en Mercado Livre.",
       },
     ],
     access: "Acceder al Canal",

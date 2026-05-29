@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet-async";
 import {
   ShoppingCart,
   MessageCircle,
-  AtSign,
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -10,12 +9,12 @@ import { FadeInSection } from "./Home";
 import { useI18n } from "../i18n";
 
 // Icons are kept here, content comes from i18n
-const channelIcons = [MessageCircle, AtSign];
+const channelIcons = [MessageCircle, ShoppingCart];
 const channelColors = ["bg-white/50", "bg-white/50"];
 const channelHovers = ["hover:border-primary-400", "hover:border-accent-400"];
 const channelUrls = [
   "https://wa.me/5519999902520",
-  "https://instagram.com/amigomeu.petfeliz"
+  "https://lista.mercadolivre.com.br/amigo-meu"
 ];
 
 export default function ComprarOnline() {

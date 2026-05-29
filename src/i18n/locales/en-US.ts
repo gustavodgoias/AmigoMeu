@@ -403,9 +403,9 @@ const enUS = {
           "Talk directly with our team and place your order quickly via WhatsApp.",
       },
       {
-        name: "Instagram @amigomeu.petfeliz",
+        name: "Mercado Livre",
         description:
-          "Follow the news and place orders directly through our official line's direct message.",
+          "Purchase our complete line of biodegradable litters and premium toppers directly on Mercado Livre.",
       },
     ],
     access: "Access Channel",

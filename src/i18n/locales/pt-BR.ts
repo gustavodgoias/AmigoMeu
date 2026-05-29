@@ -403,9 +403,9 @@ const ptBR = {
           "Fale direto com nosso time e faça seu pedido rapidamente pelo WhatsApp.",
       },
       {
-        name: "Instagram @amigomeu.petfeliz",
+        name: "Mercado Livre",
         description:
-          "Acompanhe as novidades e faça pedidos direto pelo direct da nossa linha oficial.",
+          "Adquira nossa linha completa de areias biodegradáveis e toppers premium direto no Mercado Livre.",
       },
     ],
     access: "Acessar Canal",
