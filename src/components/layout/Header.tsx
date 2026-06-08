@@ -1,25 +1,137 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X, ShoppingCart } from "lucide-react";
+import { Menu, X, ShoppingCart, ChevronDown, Facebook, Instagram, Phone, MessageCircle } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useI18n } from "../../i18n";
 import type { Locale } from "../../i18n";
 import LanguageSwitcher from "../LanguageSwitcher";
 
-const headerCopyByLocale: Record<Locale, { catalog: string; toggleMenu: string }> = {
+const headerCopyByLocale: Record<Locale, { catalog: string; toggleMenu: string; contact: string }> = {
   "pt-BR": {
     catalog: "Catálogo",
     toggleMenu: "Abrir menu",
+    contact: "Contato",
   },
   "en-US": {
     catalog: "Catalog",
     toggleMenu: "Open menu",
+    contact: "Contact",
   },
   "es-ES": {
     catalog: "Catálogo",
     toggleMenu: "Abrir menú",
+    contact: "Contacto",
   },
 };
+
+function ContactDropdown({ copy }: { copy: any }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const timeoutRef = useRef<any>(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => setIsOpen(false), 200);
+  };
+
+  return (
+    <div 
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <button
+        className={`inline-flex items-center gap-1 px-3 py-2 text-[0.72rem] font-bold tracking-[0.14em] uppercase transition-all duration-200 relative ${
+          isOpen ? "text-primary-500" : "text-[#1a1a1a] hover:text-primary-500"
+        }`}
+      >
+        {copy.contact}
+        <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+            transition={{ duration: 0.15 }}
+            className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-[#f2f2f2] overflow-hidden"
+          >
+            <div className="p-2 flex flex-col gap-1">
+              <a href="https://wa.me/5519999902520" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-4 py-3 text-[0.8rem] text-[#1a1a1a] hover:bg-primary-50 hover:text-primary-600 rounded-xl transition-colors">
+                <MessageCircle className="h-4 w-4 text-primary-500" />
+                <span>(19) 9 9990-2520</span>
+              </a>
+              <a href="tel:+551935823633" className="flex items-center gap-3 px-4 py-3 text-[0.8rem] text-[#1a1a1a] hover:bg-primary-50 hover:text-primary-600 rounded-xl transition-colors">
+                <Phone className="h-4 w-4 text-primary-500" />
+                <span>(19) 3582-3633</span>
+              </a>
+              <div className="h-[1px] bg-[#f2f2f2] my-1 mx-2" />
+              <a href="https://www.instagram.com/amigomeu.petfeliz/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-4 py-3 text-[0.8rem] text-[#1a1a1a] hover:bg-primary-50 hover:text-primary-600 rounded-xl transition-colors">
+                <Instagram className="h-4 w-4 text-primary-500" />
+                <span>Instagram</span>
+              </a>
+              <a href="https://www.facebook.com/amigomeu.petfeliz/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-4 py-3 text-[0.8rem] text-[#1a1a1a] hover:bg-primary-50 hover:text-primary-600 rounded-xl transition-colors">
+                <Facebook className="h-4 w-4 text-primary-500" />
+                <span>Facebook</span>
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+function MobileContactMenu({ copy, closeMenu }: { copy: any; closeMenu: () => void }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="flex flex-col border-b border-[#f2f2f2] last:border-0">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center justify-between py-4 text-[0.8rem] font-bold tracking-[0.14em] uppercase text-[#1a1a1a] hover:text-primary-500 transition-colors w-full text-left"
+      >
+        {copy.contact}
+        <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+      
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden"
+          >
+            <div className="flex flex-col gap-1 pb-4 pl-4">
+              <a href="https://wa.me/5519999902520" onClick={closeMenu} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 py-3 text-[0.85rem] text-[#666] hover:text-primary-500">
+                <MessageCircle className="h-4 w-4" />
+                <span>(19) 9 9990-2520</span>
+              </a>
+              <a href="tel:+551935823633" onClick={closeMenu} className="flex items-center gap-3 py-3 text-[0.85rem] text-[#666] hover:text-primary-500">
+                <Phone className="h-4 w-4" />
+                <span>(19) 3582-3633</span>
+              </a>
+              <a href="https://www.instagram.com/amigomeu.petfeliz/" onClick={closeMenu} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 py-3 text-[0.85rem] text-[#666] hover:text-primary-500">
+                <Instagram className="h-4 w-4" />
+                <span>Instagram</span>
+              </a>
+              <a href="https://www.facebook.com/amigomeu.petfeliz/" onClick={closeMenu} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 py-3 text-[0.85rem] text-[#666] hover:text-primary-500">
+                <Facebook className="h-4 w-4" />
+                <span>Facebook</span>
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 export default function Header() {
   const { t, locale } = useI18n();
@@ -84,6 +196,7 @@ export default function Header() {
                     {item.label}
                   </NavLink>
                 ))}
+                <ContactDropdown copy={copy} />
               </div>
             </nav>
 
@@ -129,7 +242,7 @@ export default function Header() {
                   key={item.href}
                   to={item.href}
                   className={({ isActive }) =>
-                    `py-4 text-[0.8rem] font-bold tracking-[0.14em] uppercase border-b border-[#f2f2f2] last:border-0 transition-colors ${
+                    `py-4 text-[0.8rem] font-bold tracking-[0.14em] uppercase border-b border-[#f2f2f2] transition-colors ${
                       isActive ? "text-primary-500" : "text-[#1a1a1a] hover:text-primary-500"
                     }`
                   }
@@ -138,6 +251,7 @@ export default function Header() {
                   {item.label}
                 </NavLink>
               ))}
+              <MobileContactMenu copy={copy} closeMenu={() => setMobileMenuOpen(false)} />
               <div className="mt-6">
                 <Link
                   to="/comprar"
