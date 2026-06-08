@@ -2,8 +2,8 @@ const ptBR = {
   // ─── Navegação ───────────────────────────────────────────────────
   nav: {
     home: "Início",
-    areias: "Linha para Gatos",
-    toppers: "Linha para Cães",
+    areias: "Gatos",
+    toppers: "Cães",
     b2b: "B2B",
     buy: "Comprar",
     language: "Idioma",

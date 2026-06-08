@@ -2,8 +2,8 @@ const esES = {
   // ─── Navegación ───────────────────────────────────────────────────
   nav: {
     home: "Inicio",
-    areias: "Línea de Gatos",
-    toppers: "Línea de Perros",
+    areias: "Gatos",
+    toppers: "Perros",
     b2b: "B2B",
     buy: "Comprar",
     language: "Idioma",

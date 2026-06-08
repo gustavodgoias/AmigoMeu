@@ -2,8 +2,8 @@ const enUS = {
   // ─── Navigation ───────────────────────────────────────────────────
   nav: {
     home: "Home",
-    areias: "Cat Line",
-    toppers: "Dog Line",
+    areias: "Cats",
+    toppers: "Dogs",
     b2b: "B2B",
     buy: "Shop",
     language: "Language",
