@@ -517,15 +517,27 @@ export default function Areias() {
 
               <FadeInSection delay={370} className="mt-12">
                 <div className="flex flex-wrap gap-4">
-                  <a
-                    href={current.buyLink2kg}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-8 py-4 bg-white text-[#1a1a1a] text-[0.85rem] font-black tracking-[0.15em] uppercase hover:bg-white/90 transition-all flex items-center gap-2 shadow-xl"
-                  >
-                    {t.nav.buy}
-                    <ArrowRight className="h-4 w-4" />
-                  </a>
+                  {current.buyLink2kg ? (
+                    <a
+                      href={current.buyLink2kg}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-8 py-4 bg-white text-[#1a1a1a] text-[0.85rem] font-black tracking-[0.15em] uppercase hover:bg-white/90 transition-all flex items-center gap-2 shadow-xl"
+                    >
+                      {t.nav.buy}
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                  ) : current.buyLink4kg ? (
+                    <a
+                      href={current.buyLink4kg}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-8 py-4 bg-white text-[#1a1a1a] text-[0.85rem] font-black tracking-[0.15em] uppercase hover:bg-white/90 transition-all flex items-center gap-2 shadow-xl"
+                    >
+                      {t.nav.buy}
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                  ) : null}
                   <Link to="/b2b" className="px-8 py-4 border-2 border-white/40 text-white text-[0.85rem] font-bold tracking-[0.15em] uppercase hover:bg-white/10 transition-all">
                     {t.nav.b2b}
                   </Link>
@@ -604,18 +616,20 @@ export default function Areias() {
                         ))}
                       </div>
                       <div className="pt-8 flex flex-wrap gap-4">
-                        <a
-                          href={product.buyLink2kg}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-8 py-4 text-white text-[0.85rem] font-bold tracking-[0.1em] uppercase transition-all duration-300 shadow-lg hover:shadow-xl"
-                          style={{ backgroundColor: product.btnBg }}
-                          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = product.btnHover)}
-                          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = product.btnBg)}
-                        >
-                          {t.nav.buy} 2kg
-                          <ArrowRight className="h-4 w-4" />
-                        </a>
+                        {product.buyLink2kg && (
+                          <a
+                            href={product.buyLink2kg}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-8 py-4 text-white text-[0.85rem] font-bold tracking-[0.1em] uppercase transition-all duration-300 shadow-lg hover:shadow-xl"
+                            style={{ backgroundColor: product.btnBg }}
+                            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = product.btnHover)}
+                            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = product.btnBg)}
+                          >
+                            {t.nav.buy} 2kg
+                            <ArrowRight className="h-4 w-4" />
+                          </a>
+                        )}
                         {product.buyLink4kg && (
                           <a
                             href={product.buyLink4kg}
