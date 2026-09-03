@@ -177,14 +177,14 @@ const esES = {
       {
         id: "mandioca-bentonita-4kg",
         name: "Yuca + Bentonita 4kg",
-        subtitle: "El poder de la yuca con la eficiencia de la bentonita",
+        subtitle: "El mejor costo-beneficio: economía y máxima eficiencia",
         description:
-          "Fórmula 100% natural que combina la alta absorción de la yuca con la bentonita. Neutraliza olores eficazmente, forma terrones ultra firmes, rinde más y no daña las patas.",
+          "La unión perfecta entre calidad y economía. Al formar terrones firmes instantáneamente, evita el desperdicio y que se desmorone. Rinde mucho más, siendo la opción más accesible y duradera para el día a día, con excelente control de olores.",
         badges: [
-          "100% Natural Yuca + Bentonita",
+          "Mejor Costo-Beneficio",
+          "Rendimiento Superior (Rinde Más)",
           "Terrones Extra Firmes",
-          "Neutralización de Olor Superior",
-          "No Duele las Patas"
+          "100% Natural"
         ],
       },
     ],

@@ -175,14 +175,14 @@ const enUS = {
       {
         id: "mandioca-bentonita-4kg",
         name: "Cassava + Bentonite 4kg",
-        subtitle: "The power of cassava with the efficiency of bentonite",
+        subtitle: "The best cost-benefit: economy and maximum efficiency",
         description:
-          "100% natural formula combining cassava's high absorption with bentonite. Effectively neutralizes odors, forms ultra-firm clumps, lasts longer, and is gentle on paws.",
+          "The perfect blend of quality and economy. By forming firm clumps instantly, it prevents waste and crumbling. It yields much more, making it the most affordable and long-lasting daily option with excellent odor control.",
         badges: [
-          "100% Natural Cassava + Bentonite",
+          "Best Cost-Benefit",
+          "Superior Yield (Lasts Longer)",
           "Extra-Firm Clumps",
-          "Superior Odor Control",
-          "Gentle on Paws"
+          "100% Natural"
         ],
       },
     ],

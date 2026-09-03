@@ -175,14 +175,14 @@ const ptBR = {
       {
         id: "mandioca-bentonita-4kg",
         name: "Mandioca + Bentonita 4kg",
-        subtitle: "A força da mandioca com a eficiência da bentonita",
+        subtitle: "O melhor custo-benefício: economia e máxima eficiência",
         description:
-          "Fórmula 100% natural que une a alta absorção da mandioca à bentonita. Neutraliza odores de forma eficaz, forma torrões ultra firmes, rende mais e não machuca as patinhas do seu gato.",
+          "A união perfeita entre qualidade e economia. Por formar torrões firmes de forma instantânea, ela não esfarela e evita o desperdício. Rende muito mais, tornando-se a opção mais acessível e duradoura para o dia a dia, com excelente controle de odores.",
         badges: [
-          "100% Natural (Mandioca + Bentonita)",
+          "Maior Custo-Benefício",
+          "Rendimento Superior (Rende Mais)",
           "Torrões Extra Firmes",
-          "Neutralização de Odor Superior",
-          "Não Machuca as Patinhas"
+          "100% Natural"
         ],
       },
     ],
