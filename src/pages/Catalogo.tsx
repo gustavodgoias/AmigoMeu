@@ -62,7 +62,7 @@ const areiasAssets: CatalogAsset[] = [
   },
   {
     id: "mandioca-bentonita-4kg",
-    image: "/images/produtos/WhatsApp Image 2026-07-06 at 09.14.41.png",
+    image: "/images/produtos/bentonita4KG.png",
     category: "areias",
     color: "#0099C6",
     link: "/areias",
