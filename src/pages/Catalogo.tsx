@@ -60,22 +60,31 @@ const areiasAssets: CatalogAsset[] = [
     link: "/areias",
     buyLink: "https://www.mercadolivre.com.br/areia-organica-biodegradavel-amigo-meu-lavanda-2kg/up/MLBU3123733291",
   },
+  {
+    id: "mandioca-bentonita-4kg",
+    image: "/images/produtos/WhatsApp Image 2026-07-06 at 09.14.41.png",
+    category: "areias",
+    color: "#0099C6",
+    link: "/areias",
+  },
 ];
 
 const toppersAssets: CatalogAsset[] = [
-  {
-    id: "frango",
-    image: "/images/produtos/AMIGOMEU-TOPPER-FRANGO-100G.png",
-    category: "toppers",
-    color: "#C8A21A",
-    link: "/toppers",
-  },
   {
     id: "carne",
     image: "/images/produtos/AMIGOMEU-TOPPER-CARNE-100G.png",
     category: "toppers",
     color: "#b53c2f",
     link: "/toppers",
+    buyLink: "https://www.mercadolivre.com.br/farofa-para-cachorro-amigo-meu-pet-feliz-sabor-carne-100g/up/MLBU4283708780?pdp_filters=item_id:MLB7141806404",
+  },
+  {
+    id: "frango",
+    image: "/images/produtos/AMIGOMEU-TOPPER-FRANGO-100G.png",
+    category: "toppers",
+    color: "#C8A21A",
+    link: "/toppers",
+    buyLink: "https://www.mercadolivre.com.br/farofa-para-cachorro-amigo-meu-pet-feliz-sabor-frango-100g/up/MLBU4262878367?pdp_filters=item_id:MLB4875300253",
   },
   {
     id: "figado",
@@ -83,6 +92,15 @@ const toppersAssets: CatalogAsset[] = [
     category: "toppers",
     color: "#5c2a7f",
     link: "/toppers",
+    buyLink: "https://www.mercadolivre.com.br/farofa-para-cachorro-amigo-meu-pet-feliz-sabor-figado-100g/up/MLBU4284136284?pdp_filters=item_id:MLB4875433863",
+  },
+  {
+    id: "kit",
+    image: "/images/produtos/AMIGOMEU-TOPPER-KIT-3.png",
+    category: "toppers",
+    color: "#1a1a1a",
+    link: "/toppers",
+    buyLink: "https://www.mercadolivre.com.br/kit-3-farofas-para-cachorro-100g-carne-frango-e-figado/up/MLBU4285245294?pdp_filters=item_id:MLB4875812795",
   },
 ];
 
@@ -169,18 +187,24 @@ export default function Catalogo() {
   const copy = catalogCopyByLocale[locale];
 
   const allProducts: CatalogProduct[] = [
-    ...areiasAssets.map((asset, index) => ({
-      ...asset,
-      name: t.areias.products[index]?.name ?? asset.id,
-      subtitle: (t.areias.products[index] as any)?.subtitle ?? "",
-      categoryLabel: copy.categoryAreias,
-    })),
-    ...toppersAssets.map((asset, index) => ({
-      ...asset,
-      name: t.toppers.products[index]?.name ?? asset.id,
-      subtitle: (t.toppers.products[index] as any)?.subtitle ?? "",
-      categoryLabel: copy.categoryToppers,
-    })),
+    ...areiasAssets.map((asset) => {
+      const match = t.areias.products.find((p: any) => p.id === asset.id);
+      return {
+        ...asset,
+        name: match?.name ?? asset.id,
+        subtitle: (match as any)?.subtitle ?? "",
+        categoryLabel: copy.categoryAreias,
+      };
+    }),
+    ...toppersAssets.map((asset) => {
+      const match = t.toppers.products.find((p: any) => p.id === asset.id);
+      return {
+        ...asset,
+        name: match?.name ?? asset.id,
+        subtitle: (match as any)?.subtitle ?? "",
+        categoryLabel: copy.categoryToppers,
+      };
+    }),
   ];
 
   return (
@@ -290,7 +314,7 @@ export default function Catalogo() {
                         </a>
                       ) : (
                         <Link
-                          to="/comprar"
+                          to="/catalogo"
                           className="inline-flex items-center justify-center gap-3 w-full px-8 py-4 text-white text-[0.8rem] font-black uppercase tracking-widest transition-all hover:brightness-110 shadow-lg"
                           style={{ backgroundColor: product.color }}
                         >

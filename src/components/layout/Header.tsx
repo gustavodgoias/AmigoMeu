@@ -210,7 +210,7 @@ export default function Header() {
 
             <div className="hidden items-center gap-4 lg:flex shrink-0">
               <LanguageSwitcher />
-              <Link to="/comprar" className="btn-primary py-2.5 px-6 flex items-center gap-2">
+              <Link to="/catalogo" className="btn-primary py-2.5 px-6 flex items-center gap-2">
                 <ShoppingCart className="h-3.5 w-3.5" />
                 {t.nav.buy}
               </Link>
@@ -262,7 +262,7 @@ export default function Header() {
               <MobileContactMenu copy={copy} closeMenu={() => setMobileMenuOpen(false)} />
               <div className="mt-6">
                 <Link
-                  to="/comprar"
+                  to="/catalogo"
                   className="btn-primary w-full flex items-center justify-center gap-2 py-3.5"
                   onClick={() => setMobileMenuOpen(false)}
                 >

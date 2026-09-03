@@ -11,7 +11,6 @@ import Home from "./pages/Home";
 import Areias from "./pages/Areias";
 import Toppers from "./pages/Toppers";
 import B2B from "./pages/B2B";
-import ComprarOnline from "./pages/ComprarOnline";
 import Sobre from "./pages/Sobre";
 import HistoriaMandioca from "./pages/HistoriaMandioca";
 import Catalogo from "./pages/Catalogo";
@@ -177,7 +176,6 @@ export default function App() {
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/mandioca" element={<HistoriaMandioca />} />
               <Route path="/catalogo" element={<Catalogo />} />
-              <Route path="/comprar" element={<ComprarOnline />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

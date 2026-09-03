@@ -739,7 +739,7 @@ export default function Home() {
               Transformando a rotina dos pets com tecnologia sustentável e ingredientes 100% naturais.
             </p>
             <div className="flex flex-wrap justify-center gap-6 mt-14">
-              <Link to="/comprar" className="px-10 py-5 bg-[#A6C84E] text-white text-[0.9rem] font-black tracking-[0.2em] uppercase hover:bg-[#92b53c] transition-all flex items-center gap-3 shadow-xl">
+              <Link to="/catalogo" className="px-10 py-5 bg-[#A6C84E] text-white text-[0.9rem] font-black tracking-[0.2em] uppercase hover:bg-[#92b53c] transition-all flex items-center gap-3 shadow-xl">
                 <ShoppingCart className="h-5 w-5" />
                 {t.cta.btnStore}
               </Link>

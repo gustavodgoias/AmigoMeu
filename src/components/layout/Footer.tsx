@@ -81,7 +81,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/comprar" className="transition-colors hover:text-white inline-block">
+                  <Link to="/catalogo" className="transition-colors hover:text-white inline-block">
                     {t.nav.buy}
                   </Link>
                 </li>

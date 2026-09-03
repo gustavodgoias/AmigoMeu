@@ -48,6 +48,14 @@ const areiasAssets = [
     bgTint: "#4aa8d815",
     buyLink2kg: "https://www.mercadolivre.com.br/areia-organica-biodegradavel-amigo-meu-lavanda-2kg/up/MLBU3123733291",
   },
+  {
+    id: "mandioca-bentonita-4kg",
+    image: "/images/produtos/WhatsApp Image 2026-07-06 at 09.14.41.png",
+    accentColor: "#0099C6",
+    btnBg: "#0099C6",
+    btnHover: "#007aa3",
+    bgTint: "#0099C615",
+  },
 ];
 
 const areiasFaqExtrasByLocale: Record<Locale, FAQItem[]> = {

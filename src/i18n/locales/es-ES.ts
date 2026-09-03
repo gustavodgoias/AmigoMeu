@@ -174,6 +174,19 @@ const esES = {
           "Textura Suave para Patas"
         ],
       },
+      {
+        id: "mandioca-bentonita-4kg",
+        name: "Yuca + Bentonita 4kg",
+        subtitle: "El poder de la yuca con la eficiencia de la bentonita",
+        description:
+          "Fórmula 100% natural que combina la alta absorción de la yuca con la bentonita. Neutraliza olores eficazmente, forma terrones ultra firmes, rinde más y no daña las patas.",
+        badges: [
+          "100% Natural Yuca + Bentonita",
+          "Terrones Extra Firmes",
+          "Neutralización de Olor Superior",
+          "No Duele las Patas"
+        ],
+      },
     ],
     comparison: {
       kicker: "¿Cuál elegir?",
@@ -268,6 +281,19 @@ const esES = {
           "Súper Palatable",
           "Rico en Vitaminas Naturales",
           "Ideal para Perros Selectivos"
+        ],
+      },
+      {
+        id: "kit",
+        name: "Kit 3 Toppers",
+        subtitle: "Carne, Pollo y Hígado",
+        description:
+          "El trío completo para tu mejor amigo. Lleva los tres sabores irresistibles (Carne, Pollo y Hígado) y garantiza variedad, crocancia y gran nutrición en el día a día de tu perro. ¡Una experiencia sensorial diferente en cada comida!",
+        badges: [
+          "Variedad de Sabores",
+          "3 Proteínas Reales",
+          "Crocancia Activa",
+          "100% Natural"
         ],
       },
     ],

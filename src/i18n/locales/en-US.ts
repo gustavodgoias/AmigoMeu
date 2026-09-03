@@ -172,6 +172,19 @@ const enUS = {
           "Gentle Texture on Paws"
         ],
       },
+      {
+        id: "mandioca-bentonita-4kg",
+        name: "Cassava + Bentonite 4kg",
+        subtitle: "The power of cassava with the efficiency of bentonite",
+        description:
+          "100% natural formula combining cassava's high absorption with bentonite. Effectively neutralizes odors, forms ultra-firm clumps, lasts longer, and is gentle on paws.",
+        badges: [
+          "100% Natural Cassava + Bentonite",
+          "Extra-Firm Clumps",
+          "Superior Odor Control",
+          "Gentle on Paws"
+        ],
+      },
     ],
     comparison: {
       kicker: "Which one to choose?",
@@ -269,6 +282,19 @@ const enUS = {
           "Super Palatable",
           "Rich in Natural Vitamins",
           "Ideal for Selective Dogs"
+        ],
+      },
+      {
+        id: "kit",
+        name: "3-Topper Kit",
+        subtitle: "Beef, Chicken, and Liver",
+        description:
+          "The complete trio for your best friend. Get all three irresistible flavors (Beef, Chicken, and Liver) and ensure variety, crunch, and great nutrition in your dog's daily life. A different sensory experience for every meal!",
+        badges: [
+          "Flavor Variety",
+          "3 Real Proteins",
+          "Active Crunch",
+          "100% Natural"
         ],
       },
     ],

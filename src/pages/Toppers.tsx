@@ -38,6 +38,14 @@ const toppersAssets = [
     btnHover: "#431f5c",
     bgTint: "#5c2a7f15",
   },
+  {
+    id: "kit",
+    image: "/images/produtos/AMIGOMEU-TOPPER-KIT-3.png",
+    accentColor: "#1a1a1a",
+    btnBg: "#1a1a1a",
+    btnHover: "#000000",
+    bgTint: "#1a1a1a08",
+  },
 ];
 
 const flavorTopicsByLocale: Record<Locale, Record<string, string[]>> = {
@@ -60,6 +68,12 @@ const flavorTopicsByLocale: Record<Locale, Record<string, string[]>> = {
       "Aroma marcante com porção prática",
       "Recomendado para momentos de baixa ingestão",
     ],
+    kit: [
+      "Três opções para diversificar a dieta do cão",
+      "Ideal para testes de aceitação de sabor",
+      "Ótimo custo-benefício para rotacionar proteínas",
+      "Embalagem prática para o dia a dia",
+    ],
   },
   "en-US": {
     frango: [
@@ -80,6 +94,12 @@ const flavorTopicsByLocale: Record<Locale, Record<string, string[]>> = {
       "Distinct aroma in a practical serving format",
       "Useful during temporary low-intake periods",
     ],
+    kit: [
+      "Three options to diversify your dog's diet",
+      "Ideal for flavor acceptance testing",
+      "Great value for rotating proteins",
+      "Practical daily packaging",
+    ],
   },
   "es-ES": {
     frango: [
@@ -99,6 +119,12 @@ const flavorTopicsByLocale: Record<Locale, Record<string, string[]>> = {
       "Topper funcional para aumentar interés al comer",
       "Aroma marcado en porción práctica",
       "Recomendado en períodos de baja ingesta",
+    ],
+    kit: [
+      "Tres opciones para diversificar la dieta del perro",
+      "Ideal para pruebas de aceptación de sabor",
+      "Excelente relación calidad-precio al rotar proteínas",
+      "Empaque práctico para el día a día",
     ],
   },
 };
@@ -296,7 +322,9 @@ export default function Toppers() {
               <img
                 src={current.image}
                 alt={current.name}
-                className="w-[85%] h-[85%] object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.3)]"
+                className={`object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.3)] ${
+                  current.id === "kit" ? "w-[55%] h-[55%] lg:-ml-24" : "w-[75%] h-[75%]"
+                }`}
               />
             </motion.div>
           </AnimatePresence>
@@ -366,7 +394,7 @@ export default function Toppers() {
               <FadeInSection delay={370} className="mt-12">
                 <div className="flex flex-wrap gap-4">
                   <Link
-                    to="/comprar"
+                    to="/catalogo"
                     className="px-8 py-4 bg-white text-[#1a1a1a] text-[0.85rem] font-black tracking-[0.15em] uppercase hover:bg-white/90 transition-all flex items-center gap-2 shadow-xl"
                   >
                     {t.nav.buy}
@@ -460,7 +488,7 @@ export default function Toppers() {
 
                         <div className="pt-8">
                           <Link
-                            to="/comprar"
+                            to="/catalogo"
                             className="inline-flex items-center gap-2 px-8 py-4 text-white text-[0.85rem] font-bold tracking-[0.1em] uppercase transition-all duration-300 shadow-lg hover:shadow-xl"
                             style={{ backgroundColor: product.btnBg }}
                             onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = product.btnHover)}

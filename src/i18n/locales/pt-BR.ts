@@ -172,6 +172,19 @@ const ptBR = {
           "Textura Gentil nas Patinhas"
         ],
       },
+      {
+        id: "mandioca-bentonita-4kg",
+        name: "Mandioca + Bentonita 4kg",
+        subtitle: "A força da mandioca com a eficiência da bentonita",
+        description:
+          "Fórmula 100% natural que une a alta absorção da mandioca à bentonita. Neutraliza odores de forma eficaz, forma torrões ultra firmes, rende mais e não machuca as patinhas do seu gato.",
+        badges: [
+          "100% Natural (Mandioca + Bentonita)",
+          "Torrões Extra Firmes",
+          "Neutralização de Odor Superior",
+          "Não Machuca as Patinhas"
+        ],
+      },
     ],
     comparison: {
       kicker: "Qual escolher?",
@@ -269,6 +282,19 @@ const ptBR = {
           "Super Palatável",
           "Rico em Vitaminas Naturais",
           "Ideal para Cães Seletivos"
+        ],
+      },
+      {
+        id: "kit",
+        name: "Kit 3 Toppers",
+        subtitle: "Carne, Frango e Fígado",
+        description:
+          "O trio completo para o seu melhor amigo. Leve os três sabores irresistíveis (Carne, Frango e Fígado) e garanta variedade, crocância e muita nutrição no dia a dia do seu cão. Uma experiência sensorial diferente a cada refeição!",
+        badges: [
+          "Variedade de Sabores",
+          "3 Proteínas Reais",
+          "Crocância Ativa",
+          "100% Natural"
         ],
       },
     ],
